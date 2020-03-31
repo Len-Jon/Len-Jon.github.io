@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>IDEA+Spring Boot+Mybatis+MySQL整合</title>
+    <url>/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/</url>
+    <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>IntelliJ IDEA旗舰版2019.3.2</li>
+<li>MySQL  8.0.19<h1 id="创建一个表"><a href="#创建一个表" class="headerlink" title="创建一个表"></a>创建一个表</h1>在数据库demo中创建一个user表，包含字段id，name，gender</li>
+</ul>
+<p><em>想偷懒的话在MySQL命令行粘贴下面的内容：</em></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span> demo <span class="built_in">character</span> <span class="keyword">set</span> utf8;</span><br><span class="line"><span class="keyword">use</span> demo;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>(<span class="keyword">id</span> <span class="built_in">int</span>,<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>),gender <span class="built_in">varchar</span>(<span class="number">1</span>));</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(<span class="keyword">id</span>,<span class="keyword">name</span>,gender) <span class="keyword">values</span>(<span class="number">01</span>,<span class="string">'张三'</span>,<span class="string">'男'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(<span class="keyword">id</span>,<span class="keyword">name</span>,gender) <span class="keyword">values</span>(<span class="number">02</span>,<span class="string">'李四'</span>,<span class="string">'女'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(<span class="keyword">id</span>,<span class="keyword">name</span>,gender) <span class="keyword">values</span>(<span class="number">03</span>,<span class="string">'王五'</span>,<span class="string">'男'</span>);</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">from</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure>
+
+<p>返回如下信息</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">mysql&gt; select id,name from user;</span><br><span class="line"><span class="code">+------+</span>------+</span><br><span class="line">| id   | name |</span><br><span class="line"><span class="code">+------+</span>------+</span><br><span class="line">|    1 | 张三 |</span><br><span class="line">|    2 | 李四 |</span><br><span class="line">|    3 | 王五 |</span><br><span class="line"><span class="code">+------+</span>------+</span><br><span class="line">3 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+<h1 id="搭建Spring-Boot框架"><a href="#搭建Spring-Boot框架" class="headerlink" title="搭建Spring Boot框架"></a>搭建Spring Boot框架</h1><p>参照上一篇文章</p>
+<p><strong>pom.xml</strong>中添加如下依赖，注意自己的MySQL版本</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 添加 MyBatis --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  	 	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="comment">&lt;!-- 注意官网的更新，旧版也不是不可以 --&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!-- 添加 MySQL --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 我的版本是8.0.19 --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">version</span>&gt;</span>8.0.19<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>resources\application.properties</strong>中添加下列语句连接数据库</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring.datasource.url</span>=jdbc:mysql://localhost:<span class="number">3306</span>/demo?useUnicode=<span class="literal">true</span>&amp;characterEncoding=UTF-<span class="number">8</span>&amp;serverTimezone=Asia/Shanghai</span><br><span class="line"><span class="attr">spring.datasource.username</span>=root</span><br><span class="line"><span class="attr">spring.datasource.password</span>=root</span><br><span class="line"><span class="attr">spring.datasource.driver-class-name</span>=com.mysql.cj.jdbc.Driver</span><br><span class="line"><span class="attr">mybatis.type-aliases-package</span>=com.example.demo.mapper</span><br></pre></td></tr></table></figure>
+<ul>
+<li>spring.datasource.url 数据库连接字符串，3306是MySQL的端口，demo是表所在的库，后面的参数直接复制就好了，之前有个时区参数忘记加上去总是报错</li>
+<li>spring.datasource.username 数据库用户名</li>
+<li>spring.datasource.password 数据库密码</li>
+<li>spring.datasource.driver-class-name 驱动类型（注意MySQL 8.0的值是com.mysql.cj.jdbc.Driver和之前不同）</li>
+<li>mybatis.type-aliases-package 配置mapper包名，这个到看后面就知道了</li>
+</ul>
+<h1 id="源文件编写"><a href="#源文件编写" class="headerlink" title="源文件编写"></a>源文件编写</h1><p>简单一些，我们分为三部分：实体类、Mapper接口、Controller类，Controller类直接调用Mapper接口进行数据持久化处理</p>
+<h2 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h2><p>新建一个entity包，新建一个User类</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">package com.example.demo.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> &#123;</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">   	<span class="keyword">private</span> <span class="keyword">String</span> name;</span><br><span class="line">   	<span class="keyword">private</span> <span class="keyword">String</span> gender;</span><br><span class="line">	<span class="comment">//全都是private那咋处理嘛，不要着急，往下看</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>右键-Generate…-Getter and Setter</p>
+<p>或</p>
+<p><kbd>Alt</kbd>+<kbd>Insert</kbd>+Getter and Setter</p>
+<p>全都选上点击<code>OK</code>，IDEA就是这么舒服</p>
+<h2 id="Mapper接口"><a href="#Mapper接口" class="headerlink" title="Mapper接口"></a>Mapper接口</h2><p>我们新建一个mapper包<br>在这个包新建一个UserMapper接口，利用注解实现SQL指令</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">package</span> <span class="selector-tag">com</span><span class="selector-class">.example</span><span class="selector-class">.demo</span><span class="selector-class">.mapper</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">com</span><span class="selector-class">.example</span><span class="selector-class">.demo</span><span class="selector-class">.entity</span><span class="selector-class">.User</span>;</span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">org</span><span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.annotations</span>.*;</span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">org</span><span class="selector-class">.springframework</span><span class="selector-class">.stereotype</span><span class="selector-class">.Repository</span>;</span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">java</span><span class="selector-class">.util</span><span class="selector-class">.List</span>;</span><br><span class="line">	</span><br><span class="line">@<span class="selector-tag">Repository</span></span><br><span class="line"><span class="selector-tag">public</span> <span class="selector-tag">interface</span> <span class="selector-tag">UserMapper</span> &#123;</span><br><span class="line">   	<span class="variable">@Select</span>(<span class="string">"SELECT * FROM user"</span>)</span><br><span class="line">   	<span class="variable">@Results</span>(&#123;</span><br><span class="line">          <span class="variable">@Result</span>(property = <span class="string">"name"</span>, column = <span class="string">"name"</span>)</span><br><span class="line">   	&#125;)</span><br><span class="line">   	List&lt;User&gt; getAll();</span><br><span class="line">   	<span class="variable">@Select</span>(<span class="string">"select * from user where id=#&#123;id&#125;"</span>)</span><br><span class="line">   	User getById(int id);</span><br><span class="line"></span><br><span class="line">   	<span class="variable">@Insert</span>(&#123;<span class="string">"insert into user(id,name,gender) values(#&#123;id&#125;,#&#123;name&#125;,#&#123;gender&#125;)"</span>&#125;)</span><br><span class="line">   	void install(User user);</span><br><span class="line"></span><br><span class="line">   	<span class="variable">@Update</span>(&#123;<span class="string">"update user set name=#&#123;name&#125;,gender=#&#123;gender&#125; where id=#&#123;id&#125;"</span>&#125;)</span><br><span class="line">   	void Update(User user);</span><br><span class="line"></span><br><span class="line">   	<span class="variable">@Delete</span>(<span class="string">"delete from user where id=#&#123;id&#125;"</span>)</span><br><span class="line">   	void delete(int id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>@Select 查询注解</p>
+<p>@Result 结果集标识，用来对应数据库列名的，如果实体类属性和数据库属性名保持一致，可以忽略此参数</p>
+<p>@Insert 插入注解</p>
+<p>@Update 修改注解</p>
+<p>@Delete 删除注解</p>
+</blockquote>
+<p>完成这步之后我们在主程序入口添加一个<br><code>@MapperScan(&quot;com.example.demo.mapper&quot;)</code><br>这样就不用每个Mapper都注解一次了,记得改成自己的mapper目录</p>
+<h2 id="Controller类"><a href="#Controller类" class="headerlink" title="Controller类"></a>Controller类</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">package</span> <span class="selector-tag">com</span><span class="selector-class">.example</span><span class="selector-class">.demo</span><span class="selector-class">.web</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">com</span><span class="selector-class">.example</span><span class="selector-class">.demo</span><span class="selector-class">.entity</span><span class="selector-class">.User</span>;</span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">com</span><span class="selector-class">.example</span><span class="selector-class">.demo</span><span class="selector-class">.mapper</span><span class="selector-class">.UserMapper</span>;</span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">org</span><span class="selector-class">.springframework</span><span class="selector-class">.beans</span><span class="selector-class">.factory</span><span class="selector-class">.annotation</span><span class="selector-class">.Autowired</span>;</span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">org</span><span class="selector-class">.springframework</span><span class="selector-class">.web</span><span class="selector-class">.bind</span><span class="selector-class">.annotation</span><span class="selector-class">.GetMapping</span>;</span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">org</span><span class="selector-class">.springframework</span><span class="selector-class">.web</span><span class="selector-class">.bind</span><span class="selector-class">.annotation</span><span class="selector-class">.RestController</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">import</span> <span class="selector-tag">java</span><span class="selector-class">.util</span><span class="selector-class">.List</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@RestController</span></span><br><span class="line">public class UserController &#123;</span><br><span class="line">    <span class="keyword">@Autowired</span></span><br><span class="line">   	private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">   	<span class="keyword">@GetMapping</span>("/getAll")</span><br><span class="line">   	public List&lt;User&gt; getAll()&#123;</span><br><span class="line">        <span class="selector-tag">return</span> <span class="selector-tag">userMapper</span><span class="selector-class">.getAll</span>();</span><br><span class="line">   	&#125;</span><br><span class="line">    <span class="keyword">@GetMapping</span>("/install")</span><br><span class="line">    public List&lt;User&gt; install(User user)&#123;</span><br><span class="line">       	<span class="selector-tag">userMapper</span><span class="selector-class">.install</span>(<span class="selector-tag">user</span>);</span><br><span class="line">       	<span class="selector-tag">return</span> <span class="selector-tag">userMapper</span><span class="selector-class">.getAll</span>();</span><br><span class="line">   	&#125;</span><br><span class="line">   	<span class="keyword">@GetMapping</span>("/delete")</span><br><span class="line">   	public List&lt;User&gt; delete(int id)&#123;</span><br><span class="line">        <span class="selector-tag">userMapper</span><span class="selector-class">.delete</span>(<span class="selector-tag">id</span>);</span><br><span class="line">       	<span class="selector-tag">return</span> <span class="selector-tag">userMapper</span><span class="selector-class">.getAll</span>();</span><br><span class="line">   	&#125;</span><br><span class="line">   	<span class="keyword">@GetMapping</span>("/update")</span><br><span class="line">   	public List&lt;User&gt; update(User user)&#123;</span><br><span class="line">        <span class="selector-tag">userMapper</span><span class="selector-class">.Update</span>(<span class="selector-tag">user</span>);</span><br><span class="line">       	<span class="selector-tag">return</span> <span class="selector-tag">userMapper</span><span class="selector-class">.getAll</span>();</span><br><span class="line">   	&#125;</span><br><span class="line">   	<span class="keyword">@GetMapping</span>("/get")</span><br><span class="line">   	public User get(int id)&#123;</span><br><span class="line">        <span class="selector-tag">return</span> <span class="selector-tag">userMapper</span><span class="selector-class">.getById</span>(<span class="selector-tag">id</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="查询所有数据"><a href="#查询所有数据" class="headerlink" title="查询所有数据"></a>查询所有数据</h2><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">http:</span><span class="comment">//localhost:8080/getAll</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200322191421130.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>为了美观其实可以写个toString方法变成换行输出，这里纯粹偷懒</p>
+</blockquote>
+<h2 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">http://localhost:8080/<span class="keyword">install</span>?<span class="keyword">id</span>=<span class="number">4</span>&amp;<span class="keyword">name</span>=孙六&amp;gender=男</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200322191439967.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">http:</span><span class="comment">//localhost:8080/delete?id=4</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20200322191459601.png#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">http://localhost:8080/<span class="meta">update</span>?id=3<span class="variable">&amp;name</span>=王六<span class="variable">&amp;gender</span>=女</span><br></pre></td></tr></table></figure>
+<h2 id><a href="#" class="headerlink" title></a><img src="https://img-blog.csdnimg.cn/20200322191530551.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></h2><p>后续可以完善模糊查找之类的</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java Web</tag>
+        <tag>Spring Boot</tag>
+        <tag>Mybatis</tag>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器配置Java环境并安装MySQL</title>
+    <url>/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/</url>
+    <content><![CDATA[<h2 id="远程配置服务器"><a href="#远程配置服务器" class="headerlink" title="远程配置服务器"></a>远程配置服务器</h2><p>服务器：CentOS 7.6 64位<br>工具：  Xftp</p>
+<h3 id="配置Java"><a href="#配置Java" class="headerlink" title="配置Java"></a>配置Java</h3><hr>
+<p>检查有没有安装过java，</p>
+<pre><code>rpm -qa|grep -i java</code></pre><p>有的话卸载</p>
+<p>到官网复制下载jdk13.0.2</p>
+<p>服务器是CentOS的，所以安装包是*.rpm</p>
+<p>通过Xftp上传到服务器修改权限并修改权限为可执行（后续出现相同问题也一样处理）</p>
+<p><img src="https://img-blog.csdnimg.cn/20200331124759779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="冥冥之中自有7意"></p>
+<p>然后到当前目录执行</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">rpm</span> -ivh 安装包名字</span><br></pre></td></tr></table></figure>
+
+<p>添加环境变量</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/usr/java/jdk-13</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CLASSPATH</span>=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$JAVA_HOME/bin</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>最后一个使环境生效</p>
+<p>检查环境配置完成</p>
+<p><img src="https://img-blog.csdnimg.cn/20200331124425639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h3><hr>
+<pre><code>tar zxvf xxxx.tar.gz</code></pre><p>移动到/usr/java/</p>
+<p>进入bin目录运行</p>
+<pre><code>./startup.sh</code></pre><p>访问服务器8080端口</p>
+<p><img src="https://img-blog.csdnimg.cn/20200331125728735.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>访问不了配置一下安全组</p>
+<p><img src="https://img-blog.csdnimg.cn/20200331124509275.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="配置Mysql"><a href="#配置Mysql" class="headerlink" title="配置Mysql"></a>配置Mysql</h3><hr>
+<p>检查有无安装mysql</p>
+<pre><code>rpm -qa|grep -i mysql</code></pre><p>有的话卸载</p>
+<p>传上去之后</p>
+<pre><code>rpm -ivh 包名</code></pre><p>然后远程安装</p>
+<pre><code>yum -y install mysql-community-server</code></pre><p>耐心等待安装</p>
+<p>开机启动：</p>
+<pre><code>systemctl enable mysqld</code></pre><p>启动</p>
+<pre><code>systemctl start mysqld</code></pre><p>终端输入mysql</p>
+<p>如果需要密码就找到<strong>var/log/mysqld.log</strong></p>
+<p>找到临时密码登陆（当然可以改，我懒）</p>
+<p>建库建表</p>
+<h2 id="前端页面将数据post到数据库"><a href="#前端页面将数据post到数据库" class="headerlink" title="前端页面将数据post到数据库"></a>前端页面将数据post到数据库</h2><p>cURL命令的两种方式，一种Get，一种Post，显然get方法把信息都放在地址上进行传输，过于危险。</p>
+<p>通过过搜索资料了解相关原理后，简单学习一下html：扫一眼大纲，嗯就是表单最重要了，</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">   <span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>数据库demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#getAll</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#install</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#b</span>&#123;</span></span><br><span class="line">            width: 500px;</span><br><span class="line">            text-align: right;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"getAll"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>查询表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">action</span>=<span class="string">"/getAll"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"查询"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"install"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>提交表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/install"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"b"</span>&gt;</span></span><br><span class="line">                       ID: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">	                  Name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                Gender: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"男"</span>&gt;</span>男<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">	            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"女"</span>&gt;</span>女<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>做一个简单的前端页面出来，一个查询，一个提交，查询是get方法，提交是post方法<br>(不得不说idea真的好用，当然VSCODE也很ok）</p>
+<h2 id="导出jar包发送到服务器运行"><a href="#导出jar包发送到服务器运行" class="headerlink" title="导出jar包发送到服务器运行"></a>导出jar包发送到服务器运行</h2><p>别忘了改一下配置文件的密码，然后再idea命令行输入</p>
+<pre><code>mvn package</code></pre><p>将jar包发送到服务器</p>
+<p>终端输入</p>
+<pre><code>java -jar 包名</code></pre><p>测试一下</p>
+<p>完成，可以了解一下怎样在后台一直跑</p>
+<p>实验入口在侧边栏”<kbd><strong>demo</strong></kbd>“</p>
+<p>或：</p>
+<p><a href="http://139.129.92.50:8080/index.html" target="_blank" rel="noopener" title="demo">http://139.129.92.50:8080/index.html</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL学习笔记</title>
+    <url>/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="MySQL基本信息"><a href="#MySQL基本信息" class="headerlink" title="MySQL基本信息"></a>MySQL基本信息</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
+<p>参考各类视频，安装失败要卸载重装</p>
+</blockquote>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><blockquote>
+<p>参考各类视频，要删除一些隐藏文件才能卸载干净</p>
+</blockquote>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li><p>MySQL服务启动</p>
+<ul>
+<li><p>手动。</p>
+</li>
+<li><p>cmd–&gt; services.msc 打开服务的窗口</p>
+</li>
+<li><p>使用管理员打开cmd</p>
+  <figure class="highlight dos"><table><tr><td class="code"><pre><span class="line"><span class="built_in">net</span> <span class="built_in">start</span> mysql : 启动mysql的服务</span><br></pre></td></tr></table></figure>
+
+  <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">stop</span> mysq<span class="variable">l:</span>关闭mysql服务</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">mysql</span> <span class="selector-tag">-u</span><span class="selector-attr">[user]</span> <span class="selector-tag">-p</span><span class="selector-attr">[password]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">mysql</span> <span class="selector-tag">-h</span><span class="selector-attr">[IP]</span> <span class="selector-tag">-u</span><span class="selector-attr">[user]</span> <span class="selector-tag">-p</span><span class="selector-attr">[password]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line"><span class="comment">mysql</span> --<span class="comment">host=</span><span class="title">[</span><span class="comment">IP</span><span class="title">]</span> --<span class="comment">user=</span><span class="title">[</span><span class="comment">user</span><span class="title">]</span> --<span class="comment">password=</span><span class="title">[</span><span class="comment">password</span><span class="title">]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输入密码时可以在-p / –password后回车输入密文</p>
+</blockquote>
+<h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cos"><table><tr><td class="code"><pre><span class="line"><span class="keyword">quit</span></span><br></pre></td></tr></table></figure>
+<h3 id="MySQL目录结构"><a href="#MySQL目录结构" class="headerlink" title="MySQL目录结构"></a>MySQL目录结构</h3><ul>
+<li>MySQL安装目录：<ul>
+<li>配置文件 my.ini</li>
+</ul>
+</li>
+<li>MySQL数据目录：datadir=”C:/ProgramData/MySQL/MySQL Server x.x/Data/“<ul>
+<li>概念<ul>
+<li>数据库：文件夹</li>
+<li>表：文件</li>
+<li>数据：数据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="SQL分类"><a href="#SQL分类" class="headerlink" title="SQL分类"></a>SQL分类</h2><p><strong>以<code>;</code>结尾，<code>--</code>+<code>space</code> 或 <code>#</code> 为注释，或者<code>/*``*/</code>多行注释，不区分大小写，建议关键字大写。这里使用小写便于记忆</strong></p>
+<h3 id="DDL-Data-Definition-Language"><a href="#DDL-Data-Definition-Language" class="headerlink" title="DDL(Data Definition Language)"></a>DDL(Data Definition Language)</h3><h4 id="操作库"><a href="#操作库" class="headerlink" title="操作库"></a>操作库</h4><hr>
+<ul>
+<li>Create</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> [库名]; <span class="comment"># 使用默认字符集创建数据库</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> [库名] <span class="built_in">character</span> <span class="keyword">set</span> [字符集,如UTF8]; <span class="comment"># 指定字符集创建数据库</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span> [库名] <span class="built_in">character</span> <span class="keyword">set</span> [字符集,如UTF8]; <span class="comment"># 判断数据库是否存在并创建</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Retrieve<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>; <span class="comment"># 显示所有数据库</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">database</span> [库名]; <span class="comment"># 显示创建该数据库的语句</span></span><br></pre></td></tr></table></figure></li>
+<li>Update<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">database</span> [库名] <span class="built_in">character</span> <span class="keyword">set</span> [字符集,如UTF8]; <span class="comment"># 修改数据库字符集</span></span><br></pre></td></tr></table></figure></li>
+<li>Delete<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> [库名]; <span class="comment"># 删除数据库</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">database</span> <span class="keyword">if</span> <span class="keyword">exists</span> [库名]; <span class="comment"># 如果数据库存在，删除</span></span><br></pre></td></tr></table></figure></li>
+<li>使用数据库<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">database</span>(); <span class="comment"># 查询当前使用的数据库</span></span><br><span class="line"><span class="keyword">use</span> [库名]; <span class="comment"># 使用数据库</span></span><br></pre></td></tr></table></figure>
+<h4 id="操作表：-注释参照操作库的指令"><a href="#操作表：-注释参照操作库的指令" class="headerlink" title="操作表：//注释参照操作库的指令"></a>操作表：<em>//注释参照操作库的指令</em></h4></li>
+</ul>
+<hr>
+<ul>
+<li>Create<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">create</span> <span class="selector-tag">table</span> <span class="selector-attr">[表名]</span>(</span><br><span class="line">	<span class="selector-attr">[列名1]</span> <span class="selector-attr">[数据类型1]</span>,</span><br><span class="line">	<span class="selector-attr">[列名2]</span> <span class="selector-attr">[数据类型2]</span>,</span><br><span class="line">	...</span><br><span class="line">	<span class="selector-attr">[列名n]</span> <span class="selector-attr">[数据类型n]</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+数据类型（可以自己搜索相关资料，这里整理一些常用的）</li>
+</ul>
+<blockquote>
+<pre><code>- int # 整型
+- double # 也有float
+    - score double(5,2) # 5位数，小数点后保留2位
+- date # 日期 只包含年月日 yyyy-MM-dd
+- datatime # 日期 包含年月日时分秒 yyyy-MM-dd HH:mm:ss
+    - timestamp # 时间戳类型 同datatime ，如果将来不给这个字段赋值，则自动使用当前系统时间
+- varchar # 字符串类型
+    - name varchar(20) # 最大20个字符</code></pre></blockquote>
+<blockquote>
+<p>类似的，可以使用与创建库相似的命令，比如指定字符集，if not exists 等等</p>
+<p>特别的，还有一个复制表的操作</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> [表名] <span class="keyword">like</span> [被复制表名]; <span class="comment"># 复制表</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Retrieve</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br><span class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> [表名];</span><br><span class="line">desc [表名]; <span class="comment"># 查询表结构</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Update</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">alter [表名] rename to [新表名]; # 重命名</span><br><span class="line">alter table [表名] character set [字符集,如UTF8];</span><br><span class="line">alter table [表名] add [列名] [数据类型]; # 增加一列</span><br><span class="line">alter table [<span class="string">表名</span>] change [<span class="string">列名</span>] [<span class="string">新列名</span>][<span class="symbol">新数据类型</span>]; # 修改列名与类型</span><br><span class="line">alter table [表名] modify [列名] [新数据类型]; # 修改某列数据类型</span><br><span class="line">alter table [表名] drop [列名]; # 删除列</span><br></pre></td></tr></table></figure></li>
+<li><p>Delete</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> [表名];</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> <span class="keyword">if</span> <span class="keyword">exists</span> [表名];</span><br></pre></td></tr></table></figure></li>
+<li><p>使用数据库</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">database</span>(); <span class="comment"># 查询当前正在使用的数据库名称</span></span><br><span class="line"><span class="keyword">use</span> 数据库名称; <span class="comment"># 使用数据库</span></span><br></pre></td></tr></table></figure>
+<h3 id="DML-Data-Manipulation-Language"><a href="#DML-Data-Manipulation-Language" class="headerlink" title="DML(Data Manipulation Language)"></a>DML(Data Manipulation Language)</h3></li>
+<li><p>增</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">insert into [<span class="string">表名</span>](<span class="link">[列名1], ... , [列名n]</span>) values([值1], ... ,[值n]);	</span><br><span class="line"><span class="code">```		</span></span><br><span class="line"><span class="code">- 删</span></span><br></pre></td></tr></table></figure>
+<p>delete from [表名] &lt;where [条件]&gt;; # &lt;&gt;为可选参数，若不加条件，逐条删除表中所有数据<br>truncate table [表名]; # 删除表，再创建一样的空表</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>改</span><br></pre></td></tr></table></figure>
+<pre><code>update [表名] set [列名1]=[值1] , ... &lt;where [条件]&gt;; # 修改符合条件的对应列名的值</code></pre><figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">### DQL(Data Query Language)</span><br><span class="line">**语法**</span><br></pre></td></tr></table></figure>
+<p>select * from [表名]; # 查询表中所有数据</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">```</span><br><span class="line"><span class="keyword">select</span>  &lt;distinct&gt;</span><br><span class="line">			 [<span class="meta">字段列表</span>]	 	</span><br><span class="line">		<span class="keyword">from</span></span><br><span class="line">			 [<span class="meta">表名列表</span>] </span><br><span class="line">		&lt;<span class="keyword">where</span>&gt;</span><br><span class="line">			 [<span class="meta">条件列表</span>]</span><br><span class="line">		&lt;<span class="keyword">group</span> <span class="keyword">by</span>&gt;</span><br><span class="line">			 [<span class="meta">分组字段</span>]</span><br><span class="line">		&lt;having&gt;</span><br><span class="line">			 [<span class="meta">分组后的条件</span>]</span><br><span class="line">		&lt;order <span class="keyword">by</span>&gt;</span><br><span class="line">			 [<span class="meta">排序方式</span>]</span><br><span class="line">		&lt;limit&gt;</span><br><span class="line">			 [<span class="meta">分页限定</span>]</span><br><span class="line">		; <span class="meta"># 列表按逗号分隔，表名列表中查询符合条件的字段列表并按照分组字段分好组，按照排序方式及分页条件分组后的条件输出</span></span><br></pre></td></tr></table></figure></li>
+<li><p>基础查询</p>
+<ul>
+<li>多个字段的查询<br>  select 字段名1，字段名2… from 表名；<ul>
+<li>注意：<ul>
+<li>如果查询所有字段，则可以使用*来替代字段列表。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>去除重复：<ul>
+<li>distinct</li>
+</ul>
+</li>
+<li>计算列<ul>
+<li>一般可以使用四则运算计算一些列的值。（一般只会进行数值型的计算）</li>
+<li>ifnull(表达式1,表达式2)：null参与的运算，计算结果都为null<ul>
+<li>表达式1：哪个字段需要判断是否为null</li>
+<li>如果该字段为null后的替换值。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>起别名：<ul>
+<li>as：as也可以省略</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>条件查询</p>
+<ul>
+<li>where子句后跟条件</li>
+<li>运算符<ul>
+<li><em>&gt;</em> 、&lt; 、&lt;= 、&gt;= 、= 、&lt;&gt;</li>
+<li>BETWEEN…AND  </li>
+<li>IN( 集合) </li>
+<li>LIKE：模糊查询</li>
+<li>占位符：<ul>
+<li>_:单个任意字符</li>
+<li>%：多个任意字符</li>
+</ul>
+</li>
+<li>IS NULL  </li>
+<li>and  或 &amp;&amp;</li>
+<li>or  或 || </li>
+<li>not  或 !</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="DCL-Data-Control-Language"><a href="#DCL-Data-Control-Language" class="headerlink" title="DCL(Data Control Language)"></a>DCL(Data Control Language)</h3><p><em>待更新</em></p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span> demo <span class="built_in">character</span> <span class="keyword">set</span> utf8;</span><br><span class="line"><span class="keyword">use</span> demo;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> <span class="keyword">user</span>(<span class="keyword">id</span> <span class="built_in">int</span>,<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>),gender <span class="built_in">varchar</span>(<span class="number">1</span>));</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(<span class="keyword">id</span>,<span class="keyword">name</span>,gender) <span class="keyword">values</span>(<span class="number">01</span>,<span class="string">'张三'</span>,<span class="string">'男'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(<span class="keyword">id</span>,<span class="keyword">name</span>,gender) <span class="keyword">values</span>(<span class="number">02</span>,<span class="string">'李四'</span>,<span class="string">'女'</span>);</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">name</span>=<span class="string">'王五'</span>,gender=<span class="string">'男'</span> <span class="keyword">where</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(<span class="keyword">id</span>,<span class="keyword">name</span>,gender) <span class="keyword">values</span>(<span class="number">02</span>,<span class="string">'李四'</span>,<span class="string">'女'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span>(<span class="keyword">id</span>,<span class="keyword">name</span>,gender) <span class="keyword">values</span>(<span class="number">03</span>,<span class="string">'张三'</span>,<span class="string">'男'</span>);</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">from</span> <span class="keyword">user</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">name</span> <span class="keyword">like</span> <span class="string">'张%'</span>;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>SQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+</search>
