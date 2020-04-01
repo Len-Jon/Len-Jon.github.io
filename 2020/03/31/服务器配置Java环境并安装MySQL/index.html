@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="远程配置服务器服务器：CentOS 7.6 64位工具：  Xftp 配置Java 检查有没有安装过java， rpm -qa|grep -i java有的话卸载 到官网复制下载jdk13.0.2 服务器是CentOS的，所以安装包是*.rpm 通过Xftp上传到服务器修改权限并修改权限为可执行（后续出现相同问题也一样处理）  然后到当前目录执行 1rpm -ivh 安装包名字  添加环境变量 1">
+<meta name="description" content="远程配置服务器服务器：CentOS 7.6 64位工具：  Xftp 配置Java 检查有没有安装过java， 1rpm -qa|grep -i java 有的话卸载 到官网复制下载jdk13.0.2 服务器是CentOS的，所以安装包是*.rpm 通过Xftp上传到服务器修改权限并修改权限为可执行（后续出现相同问题也一样处理）  然后到当前目录执行 1rpm -ivh 安装包名字  添加环境变量">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器配置Java环境并安装MySQL">
 <meta property="og:url" content="http://lenjon.xyz/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/index.html">
 <meta property="og:site_name" content="Len&#39;s Blog">
-<meta property="og:description" content="远程配置服务器服务器：CentOS 7.6 64位工具：  Xftp 配置Java 检查有没有安装过java， rpm -qa|grep -i java有的话卸载 到官网复制下载jdk13.0.2 服务器是CentOS的，所以安装包是*.rpm 通过Xftp上传到服务器修改权限并修改权限为可执行（后续出现相同问题也一样处理）  然后到当前目录执行 1rpm -ivh 安装包名字  添加环境变量 1">
+<meta property="og:description" content="远程配置服务器服务器：CentOS 7.6 64位工具：  Xftp 配置Java 检查有没有安装过java， 1rpm -qa|grep -i java 有的话卸载 到官网复制下载jdk13.0.2 服务器是CentOS的，所以安装包是*.rpm 通过Xftp上传到服务器修改权限并修改权限为可执行（后续出现相同问题也一样处理）  然后到当前目录执行 1rpm -ivh 安装包名字  添加环境变量">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200331124759779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200331124425639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200331125728735.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200331124509275.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2020-03-31T04:42:52.000Z">
-<meta property="article:modified_time" content="2020-03-31T15:09:53.478Z">
+<meta property="article:modified_time" content="2020-04-01T01:05:39.338Z">
 <meta property="article:author" content="Len">
 <meta property="article:tag" content="Java Web">
 <meta name="twitter:card" content="summary">
@@ -383,6 +383,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -410,58 +420,80 @@
         <h2 id="远程配置服务器"><a href="#远程配置服务器" class="headerlink" title="远程配置服务器"></a>远程配置服务器</h2><p>服务器：CentOS 7.6 64位<br>工具：  Xftp</p>
 <h3 id="配置Java"><a href="#配置Java" class="headerlink" title="配置Java"></a>配置Java</h3><hr>
 <p>检查有没有安装过java，</p>
-<pre><code>rpm -qa|grep -i java</code></pre><p>有的话卸载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa|grep -i java</span><br></pre></td></tr></table></figure>
+<p>有的话卸载</p>
 <p>到官网复制下载jdk13.0.2</p>
 <p>服务器是CentOS的，所以安装包是*.rpm</p>
 <p>通过Xftp上传到服务器修改权限并修改权限为可执行（后续出现相同问题也一样处理）</p>
 <p><img src="https://img-blog.csdnimg.cn/20200331124759779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="冥冥之中自有7意"></p>
 <p>然后到当前目录执行</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">rpm</span> -ivh 安装包名字</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh 安装包名字</span><br></pre></td></tr></table></figure>
 
 <p>添加环境变量</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/usr/java/jdk-13</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">CLASSPATH</span>=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$JAVA_HOME/bin</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk-13</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
 
 <p>最后一个使环境生效</p>
 <p>检查环境配置完成</p>
 <p><img src="https://img-blog.csdnimg.cn/20200331124425639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <h3 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h3><hr>
-<pre><code>tar zxvf xxxx.tar.gz</code></pre><p>移动到/usr/java/</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxvf xxxx.tar.gz</span><br></pre></td></tr></table></figure>
+<p>移动到/usr/java/</p>
 <p>进入bin目录运行</p>
-<pre><code>./startup.sh</code></pre><p>访问服务器8080端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./startup.sh</span><br></pre></td></tr></table></figure>
+<p>访问服务器8080端口</p>
 <p><img src="https://img-blog.csdnimg.cn/20200331125728735.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <p>访问不了配置一下安全组</p>
 <p><img src="https://img-blog.csdnimg.cn/20200331124509275.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <h3 id="配置Mysql"><a href="#配置Mysql" class="headerlink" title="配置Mysql"></a>配置Mysql</h3><hr>
 <p>检查有无安装mysql</p>
-<pre><code>rpm -qa|grep -i mysql</code></pre><p>有的话卸载</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa|grep -i mysql</span><br></pre></td></tr></table></figure>
+
+<p>有的话卸载</p>
 <p>传上去之后</p>
-<pre><code>rpm -ivh 包名</code></pre><p>然后远程安装</p>
-<pre><code>yum -y install mysql-community-server</code></pre><p>耐心等待安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh 包名</span><br></pre></td></tr></table></figure>
+<p>然后远程安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql-community-server</span><br></pre></td></tr></table></figure>
+<p>耐心等待安装</p>
 <p>开机启动：</p>
-<pre><code>systemctl enable mysqld</code></pre><p>启动</p>
-<pre><code>systemctl start mysqld</code></pre><p>终端输入mysql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> mysqld</span><br></pre></td></tr></table></figure>
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
+<p>终端输入mysql</p>
 <p>如果需要密码就找到<strong>var/log/mysqld.log</strong></p>
 <p>找到临时密码登陆（当然可以改，我懒）</p>
 <p>建库建表</p>
 <h2 id="前端页面将数据post到数据库"><a href="#前端页面将数据post到数据库" class="headerlink" title="前端页面将数据post到数据库"></a>前端页面将数据post到数据库</h2><p>cURL命令的两种方式，一种Get，一种Post，显然get方法把信息都放在地址上进行传输，过于危险。</p>
-<p>通过过搜索资料了解相关原理后，简单学习一下html：扫一眼大纲，嗯就是表单最重要了，</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">   <span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">   	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>数据库demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#getAll</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#install</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#b</span>&#123;</span></span><br><span class="line">            width: 500px;</span><br><span class="line">            text-align: right;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"getAll"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>查询表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">action</span>=<span class="string">"/getAll"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"查询"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"install"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>提交表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/install"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"b"</span>&gt;</span></span><br><span class="line">                       ID: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">	                  Name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                Gender: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"男"</span>&gt;</span>男<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">	            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"女"</span>&gt;</span>女<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>通过过搜索资料了解相关原理后，简单学习一下html：扫一眼大纲，嗯就是表单那一块最重要了：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>数据库demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#getAll</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#install</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#b</span>&#123;</span></span><br><span class="line">            width: 500px;</span><br><span class="line">            text-align: right;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"getAll"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>查询表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">action</span>=<span class="string">"/getAll"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"查询"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"install"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>提交表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/install"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"b"</span>&gt;</span></span><br><span class="line">                        ID: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                  Name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                Gender: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"男"</span>&gt;</span>男<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"女"</span>&gt;</span>女<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>做一个简单的前端页面出来，一个查询，一个提交，查询是get方法，提交是post方法<br>(不得不说idea真的好用，当然VSCODE也很ok）</p>
+<p>做一个简单的前端页面出来，一个查询，一个提交，查询是get方法，提交是post方法<br>(不得不说idea真的好用，自动对称补全修正，当然VSCODE也很ok）</p>
 <h2 id="导出jar包发送到服务器运行"><a href="#导出jar包发送到服务器运行" class="headerlink" title="导出jar包发送到服务器运行"></a>导出jar包发送到服务器运行</h2><p>别忘了改一下配置文件的密码，然后再idea命令行输入</p>
-<pre><code>mvn package</code></pre><p>将jar包发送到服务器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+<p>将jar包发送到服务器</p>
 <p>终端输入</p>
-<pre><code>java -jar 包名</code></pre><p>测试一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar 包名</span><br></pre></td></tr></table></figure>
+<p>测试一下</p>
 <p>完成，可以了解一下怎样在后台一直跑</p>
-<p>实验入口在侧边栏”<kbd><strong>demo</strong></kbd>“</p>
+<p>我是直接开个Screen</p>
+<p>实验入口在侧边栏”<kbd><strong>Demo</strong></kbd>“</p>
 <p>或：</p>
-<p><a href="http://139.129.92.50:8080/index.html" target="_blank" rel="noopener" title="demo">http://139.129.92.50:8080/index.html</a></p>
+<p><a href="http://139.129.92.50:8080/index.html" target="_blank" rel="noopener" title="Demo">Demo</a></p>
 
       
     </div>
     
     
     
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-----------看到底线啦 <i class="fa fa-paw"></i> 感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
 
     
 
@@ -491,7 +523,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java-Web/" rel="tag"># Java Web</a>
+            <a href="/tags/Java-Web/" <i class="fa fa-tag"></i> Java Web</a>
           
         </div>
       
@@ -542,6 +574,9 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -578,9 +613,11 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+			<a href="/">
               <img class="site-author-image" itemprop="image"
                 src="/images/avatar.gif"
                 alt="Len" />
+			</a>
             
               <p class="site-author-name" itemprop="name">Len</p>
               <p class="site-description motion-element" itemprop="description">这个是懒狗，什么都没有留下~</p>
@@ -879,6 +916,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'IdeUGctwU3R7COUheMX9SjIT-gzGzoHsz',
+        appKey: 'an7mFt1sMQ7x7oCJx3VCwRS0',
+        placeholder: '<－biubiu－⊂(`ω´∩)',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
