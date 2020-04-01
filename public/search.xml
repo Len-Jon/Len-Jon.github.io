@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>服务器配置Java环境并安装MySQL</title>
+    <url>/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/</url>
+    <content><![CDATA[<h2 id="远程配置服务器"><a href="#远程配置服务器" class="headerlink" title="远程配置服务器"></a>远程配置服务器</h2><p>服务器：CentOS 7.6 64位<br>工具：  Xftp</p>
+<h3 id="配置Java"><a href="#配置Java" class="headerlink" title="配置Java"></a>配置Java</h3><hr>
+<p>检查有没有安装过java，</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -qa|grep -i java</span><br></pre></td></tr></table></figure>
+<p>有的话卸载</p>
+<p>到官网复制下载jdk13.0.2</p>
+<p>服务器是CentOS的，所以安装包是*.rpm</p>
+<p>通过Xftp上传到服务器修改权限并修改权限为可执行（后续出现相同问题也一样处理）</p>
+<p><img src="https://img-blog.csdnimg.cn/20200331124759779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="冥冥之中自有7意"></p>
+<p>然后到当前目录执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -ivh 安装包名字</span><br></pre></td></tr></table></figure>
+
+<p>添加环境变量</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk-13</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<p>最后一个使环境生效</p>
+<p>检查环境配置完成</p>
+<p><img src="https://img-blog.csdnimg.cn/20200331124425639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h3><hr>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar zxvf xxxx.tar.gz</span><br></pre></td></tr></table></figure>
+<p>移动到/usr/java/</p>
+<p>进入bin目录运行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./startup.sh</span><br></pre></td></tr></table></figure>
+<p>访问服务器8080端口</p>
+<p><img src="https://img-blog.csdnimg.cn/20200331125728735.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>访问不了配置一下安全组</p>
+<p><img src="https://img-blog.csdnimg.cn/20200331124509275.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h3 id="配置Mysql"><a href="#配置Mysql" class="headerlink" title="配置Mysql"></a>配置Mysql</h3><hr>
+<p>检查有无安装mysql</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -qa|grep -i mysql</span><br></pre></td></tr></table></figure>
+
+<p>有的话卸载</p>
+<p>传上去之后</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -ivh 包名</span><br></pre></td></tr></table></figure>
+<p>然后远程安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum -y install mysql-community-server</span><br></pre></td></tr></table></figure>
+<p>耐心等待安装</p>
+<p>开机启动：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> mysqld</span><br></pre></td></tr></table></figure>
+<p>启动</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
+<p>终端输入mysql</p>
+<p>如果需要密码就找到<strong>var/log/mysqld.log</strong></p>
+<p>找到临时密码登陆（当然可以改，我懒）</p>
+<p>建库建表</p>
+<h2 id="前端页面将数据post到数据库"><a href="#前端页面将数据post到数据库" class="headerlink" title="前端页面将数据post到数据库"></a>前端页面将数据post到数据库</h2><p>cURL命令的两种方式，一种Get，一种Post，显然get方法把信息都放在地址上进行传输，过于危险。</p>
+<p>通过过搜索资料了解相关原理后，简单学习一下html：扫一眼大纲，嗯就是表单那一块最重要了：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>数据库demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#getAll</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#install</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#b</span>&#123;</span></span><br><span class="line">            width: 500px;</span><br><span class="line">            text-align: right;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"getAll"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>查询表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">action</span>=<span class="string">"/getAll"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"查询"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"install"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>提交表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/install"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"b"</span>&gt;</span></span><br><span class="line">                        ID: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                  Name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                Gender: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"男"</span>&gt;</span>男<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"女"</span>&gt;</span>女<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>做一个简单的前端页面出来，一个查询，一个提交，查询是get方法，提交是post方法<br>(不得不说idea真的好用，自动对称补全修正，当然VSCODE也很ok）</p>
+<h2 id="导出jar包发送到服务器运行"><a href="#导出jar包发送到服务器运行" class="headerlink" title="导出jar包发送到服务器运行"></a>导出jar包发送到服务器运行</h2><p>别忘了改一下配置文件的密码，然后再idea命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+<p>将jar包发送到服务器</p>
+<p>终端输入</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar 包名</span><br></pre></td></tr></table></figure>
+<p>测试一下</p>
+<p>完成，可以了解一下怎样在后台一直跑</p>
+<p>我是直接开个Screen</p>
+<p>实验入口在侧边栏”<kbd><strong>Demo</strong></kbd>“</p>
+<p>或：</p>
+<p><a href="http://139.129.92.50:8080/index.html" target="_blank" rel="noopener" title="Demo">Demo</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IDEA+Spring Boot+Mybatis+MySQL整合</title>
     <url>/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/</url>
     <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
@@ -231,78 +303,6 @@
       </categories>
       <tags>
         <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器配置Java环境并安装MySQL</title>
-    <url>/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/</url>
-    <content><![CDATA[<h2 id="远程配置服务器"><a href="#远程配置服务器" class="headerlink" title="远程配置服务器"></a>远程配置服务器</h2><p>服务器：CentOS 7.6 64位<br>工具：  Xftp</p>
-<h3 id="配置Java"><a href="#配置Java" class="headerlink" title="配置Java"></a>配置Java</h3><hr>
-<p>检查有没有安装过java，</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -qa|grep -i java</span><br></pre></td></tr></table></figure>
-<p>有的话卸载</p>
-<p>到官网复制下载jdk13.0.2</p>
-<p>服务器是CentOS的，所以安装包是*.rpm</p>
-<p>通过Xftp上传到服务器修改权限并修改权限为可执行（后续出现相同问题也一样处理）</p>
-<p><img src="https://img-blog.csdnimg.cn/20200331124759779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="冥冥之中自有7意"></p>
-<p>然后到当前目录执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -ivh 安装包名字</span><br></pre></td></tr></table></figure>
-
-<p>添加环境变量</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/java/jdk-13</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:%JAVA_HOME%/lib/dt.jar:%JAVA_HOME%/lib/tools.jar</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
-
-<p>最后一个使环境生效</p>
-<p>检查环境配置完成</p>
-<p><img src="https://img-blog.csdnimg.cn/20200331124425639.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3 id="配置Tomcat"><a href="#配置Tomcat" class="headerlink" title="配置Tomcat"></a>配置Tomcat</h3><hr>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar zxvf xxxx.tar.gz</span><br></pre></td></tr></table></figure>
-<p>移动到/usr/java/</p>
-<p>进入bin目录运行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./startup.sh</span><br></pre></td></tr></table></figure>
-<p>访问服务器8080端口</p>
-<p><img src="https://img-blog.csdnimg.cn/20200331125728735.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<p>访问不了配置一下安全组</p>
-<p><img src="https://img-blog.csdnimg.cn/20200331124509275.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NDE3NzYx,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h3 id="配置Mysql"><a href="#配置Mysql" class="headerlink" title="配置Mysql"></a>配置Mysql</h3><hr>
-<p>检查有无安装mysql</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -qa|grep -i mysql</span><br></pre></td></tr></table></figure>
-
-<p>有的话卸载</p>
-<p>传上去之后</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -ivh 包名</span><br></pre></td></tr></table></figure>
-<p>然后远程安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum -y install mysql-community-server</span><br></pre></td></tr></table></figure>
-<p>耐心等待安装</p>
-<p>开机启动：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> mysqld</span><br></pre></td></tr></table></figure>
-<p>启动</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld</span><br></pre></td></tr></table></figure>
-<p>终端输入mysql</p>
-<p>如果需要密码就找到<strong>var/log/mysqld.log</strong></p>
-<p>找到临时密码登陆（当然可以改，我懒）</p>
-<p>建库建表</p>
-<h2 id="前端页面将数据post到数据库"><a href="#前端页面将数据post到数据库" class="headerlink" title="前端页面将数据post到数据库"></a>前端页面将数据post到数据库</h2><p>cURL命令的两种方式，一种Get，一种Post，显然get方法把信息都放在地址上进行传输，过于危险。</p>
-<p>通过过搜索资料了解相关原理后，简单学习一下html：扫一眼大纲，嗯就是表单那一块最重要了：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>数据库demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#getAll</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#install</span>&#123;</span></span><br><span class="line">            width: 550px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#b</span>&#123;</span></span><br><span class="line">            width: 500px;</span><br><span class="line">            text-align: right;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"getAll"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>查询表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">action</span>=<span class="string">"/getAll"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"查询"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"install"</span> <span class="attr">style</span>=<span class="string">"font-family:'Microsoft JhengHei',serif;padding:20px;border-radius:10px;border:10px solid #EE872A;"</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">"background-color:rgba(102,204,255,0.4);clear:both;text-align:center;"</span>&gt;</span>提交表单<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"/install"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"b"</span>&gt;</span></span><br><span class="line">                        ID: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                  Name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">                Gender: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"男"</span>&gt;</span>男<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"gender"</span> <span class="attr">value</span>=<span class="string">"女"</span>&gt;</span>女<span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>做一个简单的前端页面出来，一个查询，一个提交，查询是get方法，提交是post方法<br>(不得不说idea真的好用，自动对称补全修正，当然VSCODE也很ok）</p>
-<h2 id="导出jar包发送到服务器运行"><a href="#导出jar包发送到服务器运行" class="headerlink" title="导出jar包发送到服务器运行"></a>导出jar包发送到服务器运行</h2><p>别忘了改一下配置文件的密码，然后再idea命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
-<p>将jar包发送到服务器</p>
-<p>终端输入</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">java -jar 包名</span><br></pre></td></tr></table></figure>
-<p>测试一下</p>
-<p>完成，可以了解一下怎样在后台一直跑</p>
-<p>我是直接开个Screen</p>
-<p>实验入口在侧边栏”<kbd><strong>Demo</strong></kbd>“</p>
-<p>或：</p>
-<p><a href="http://139.129.92.50:8080/index.html" target="_blank" rel="noopener" title="Demo">Demo</a></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java Web</tag>
       </tags>
   </entry>
 </search>
