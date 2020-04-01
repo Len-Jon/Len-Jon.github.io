@@ -1182,7 +1182,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2a7e96;
+  background: #5b7e06;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2610,7 +2610,7 @@ body {
   background: rgba(255,255,255,0.8);
 }
 .back-to-top {
-  right: 145px;
+  right: 5%;
   width: 70px;
   height: 900px;
   top: -900px;
@@ -2625,4 +2625,10 @@ body {
 .back-to-top.back-to-top-on {
   bottom: unset;
   top: calc(100vh - 900px - 200px);
+}
+.beian a {
+  color: #0fd;
+}
+.copyright {
+  color: #0fd;
 }
