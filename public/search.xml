@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>IDEA+Spring Boot+Mybatis+MySQL整合</title>
-    <url>/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/</url>
+    <url>/blog/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/</url>
     <content><![CDATA[<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
 <li>IntelliJ IDEA旗舰版2019.3.2</li>
 <li>MySQL  8.0.19<h1 id="创建一个表"><a href="#创建一个表" class="headerlink" title="创建一个表"></a>创建一个表</h1>在数据库demo中创建一个user表，包含字段id，name，gender</li>
@@ -69,7 +69,7 @@
   </entry>
   <entry>
     <title>服务器配置Java环境并安装MySQL</title>
-    <url>/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/</url>
+    <url>/blog/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/</url>
     <content><![CDATA[<h2 id="远程配置服务器"><a href="#远程配置服务器" class="headerlink" title="远程配置服务器"></a>远程配置服务器</h2><p>服务器：CentOS 7.6 64位<br>工具：  Xftp</p>
 <h3 id="配置Java"><a href="#配置Java" class="headerlink" title="配置Java"></a>配置Java</h3><hr>
 <p>检查有没有安装过java，</p>
@@ -141,7 +141,7 @@
   </entry>
   <entry>
     <title>SQL学习笔记</title>
-    <url>/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <url>/blog/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="MySQL基本信息"><a href="#MySQL基本信息" class="headerlink" title="MySQL基本信息"></a>MySQL基本信息</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
 <p>参考各类视频，安装失败要卸载重装</p>
 </blockquote>
