@@ -1227,7 +1227,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #8f537d;
+  background: #ff57ad;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2675,5 +2675,14 @@ body {
   color: #0fd;
 }
 .copyright {
+  background: rgba(255,255,255,0.9);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   color: #0fd;
+}
+.busuanzi-count {
+  background: rgba(255,255,255,0.9);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #9500ff;
 }
