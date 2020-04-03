@@ -1227,7 +1227,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffff2e;
+  background: #b3266c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2643,6 +2643,7 @@ body {
 }
 .content-wrap {
   background: rgba(255,255,255,0.9);
+  border-radius: 30px;
 }
 .site-brand-container {
   background: rgba(0,0,0,0.5);
@@ -2650,9 +2651,11 @@ body {
 }
 .header-inner {
   background: rgba(255,255,255,0.8);
+  border-radius: 20px;
 }
 .sidebar-inner {
   background: rgba(255,255,255,0.8);
+  border-radius: 10px;
 }
 .back-to-top {
   right: 5%;
