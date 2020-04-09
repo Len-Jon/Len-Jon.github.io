@@ -4,7 +4,9 @@
     <title>Mybatis带下划线字段查询结果为空</title>
     <url>/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/</url>
     <content><![CDATA[<h1 id="Mybatis带下划线字段查询结果为空"><a href="#Mybatis带下划线字段查询结果为空" class="headerlink" title="Mybatis带下划线字段查询结果为空"></a>Mybatis带下划线字段查询结果为空</h1><p>今天在制作酒店管理系统的员工部分时发现了个问题：</p>
+<p><img src="/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/qq1.png" alt></p>
 <p>job_number为工号，数据库中是有值的，写入也没问题，于是直接get方法看一下返回的json：</p>
+<p><img src="/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/qq2.png" alt></p>
 <p>咦？带下划线的字段都没读出来？</p>
 <p>经过搜索，发现是由于驼峰规则的原因导致的，我又不想改配置，不想改实体，咋办呢？</p>
 <p>使用@Results和@Result注解：</p>
@@ -16,9 +18,9 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>Java Web</tag>
         <tag>Mybatis</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -53,8 +55,8 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>Freemaker</tag>
         <tag>Spring Boot</tag>
+        <tag>Freemaker</tag>
       </tags>
   </entry>
   <entry>
@@ -218,11 +220,11 @@
 <p>完成!</p>
 ]]></content>
       <tags>
-        <tag>MySQL</tag>
         <tag>Java Web</tag>
-        <tag>Freemaker</tag>
         <tag>Mybatis</tag>
+        <tag>MySQL</tag>
         <tag>Spring Boot</tag>
+        <tag>Freemaker</tag>
       </tags>
   </entry>
   <entry>
@@ -563,9 +565,9 @@
         <category>Java</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>Java Web</tag>
         <tag>Mybatis</tag>
+        <tag>MySQL</tag>
         <tag>Spring Boot</tag>
       </tags>
   </entry>
