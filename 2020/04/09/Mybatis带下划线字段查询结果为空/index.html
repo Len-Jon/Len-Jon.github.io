@@ -23,16 +23,21 @@
     var CONFIG = {"hostname":"lenjon.xyz","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="这个是懒狗，什么都没有留下~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Len&#39;s Blog">
-<meta property="og:url" content="http://lenjon.xyz/archives/2020/index.html">
+  <meta name="description" content="Mybatis带下划线字段查询结果为空今天在制作酒店管理系统的员工部分时发现了个问题： job_number为工号，数据库中是有值的，写入也没问题，于是直接get方法看一下返回的json： 咦？带下划线的字段都没读出来？ 经过搜索，发现是由于驼峰规则的原因导致的，我又不想改配置，不想改实体，咋办呢？ 使用@Results和@Result注解： 123456@Select(&amp;#123;&quot;select">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis带下划线字段查询结果为空">
+<meta property="og:url" content="http://lenjon.xyz/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/index.html">
 <meta property="og:site_name" content="Len&#39;s Blog">
-<meta property="og:description" content="这个是懒狗，什么都没有留下~">
+<meta property="og:description" content="Mybatis带下划线字段查询结果为空今天在制作酒店管理系统的员工部分时发现了个问题： job_number为工号，数据库中是有值的，写入也没问题，于是直接get方法看一下返回的json： 咦？带下划线的字段都没读出来？ 经过搜索，发现是由于驼峰规则的原因导致的，我又不想改配置，不想改实体，咋办呢？ 使用@Results和@Result注解： 123456@Select(&amp;#123;&quot;select">
+<meta property="article:published_time" content="2020-04-09T15:04:04.000Z">
+<meta property="article:modified_time" content="2020-04-09T15:05:46.767Z">
 <meta property="article:author" content="Len">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="Java Web">
+<meta property="article:tag" content="Mybatis">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://lenjon.xyz/archives/2020/">
+<link rel="canonical" href="http://lenjon.xyz/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/">
 
 
 <script id="page-configurations">
@@ -40,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>归档 | Len's Blog</title>
+  <title>Mybatis带下划线字段查询结果为空 | Len's Blog</title>
   
 
 
@@ -193,196 +198,156 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://lenjon.xyz/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Len">
+      <meta itemprop="description" content="这个是懒狗，什么都没有留下~">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Len's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mybatis带下划线字段查询结果为空
+        </h1>
+
+        <div class="post-meta">
+
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-04-09 23:04:04 / 修改时间：23:05:46" itemprop="dateCreated datePublished" datetime="2020-04-09T23:04:04+08:00">2020-04-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 8 篇日志。 继续努力。</span>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <h1 id="Mybatis带下划线字段查询结果为空"><a href="#Mybatis带下划线字段查询结果为空" class="headerlink" title="Mybatis带下划线字段查询结果为空"></a>Mybatis带下划线字段查询结果为空</h1><p>今天在制作酒店管理系统的员工部分时发现了个问题：</p>
+<p>job_number为工号，数据库中是有值的，写入也没问题，于是直接get方法看一下返回的json：</p>
+<p>咦？带下划线的字段都没读出来？</p>
+<p>经过搜索，发现是由于驼峰规则的原因导致的，我又不想改配置，不想改实体，咋办呢？</p>
+<p>使用@Results和@Result注解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Select</span>(&#123;<span class="string">"select * from employee where id=#&#123;id&#125;"</span>&#125;)</span><br><span class="line"><span class="meta">@Results</span>(&#123;</span><br><span class="line">        <span class="meta">@Result</span>(column=<span class="string">"id_card"</span>, property=<span class="string">"id_card"</span>, jdbcType=JdbcType.VARCHAR),</span><br><span class="line">        <span class="meta">@Result</span>(column=<span class="string">"job_number"</span>, property=<span class="string">"job_number"</span>, jdbcType=JdbcType.INTEGER)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Employee <span class="title">selectById</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-09T23:04:04+08:00"
-              content="2020-04-09">
-          04-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/" itemprop="url">
-            <span itemprop="name">Mybatis带下划线字段查询结果为空</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-07T09:53:30+08:00"
-              content="2020-04-07">
-          04-07
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/" itemprop="url">
-            <span itemprop="name">利用Springboot和Freemaker简单模拟登录系统</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-04T22:21:33+08:00"
-              content="2020-04-04">
-          04-04
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/04/%E5%88%A9%E7%94%A8Apache%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE/" itemprop="url">
-            <span itemprop="name">利用Apache爬取微博首页的推荐</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-02T20:44:32+08:00"
-              content="2020-04-02">
-          04-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/02/%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/" itemprop="url">
-            <span itemprop="name">为数据库操作添加前端页面</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-31T12:42:52+08:00"
-              content="2020-03-31">
-          03-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/" itemprop="url">
-            <span itemprop="name">服务器配置Java环境并安装MySQL</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-30T23:56:34+08:00"
-              content="2020-03-30">
-          03-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/30/Spring-Boot-Freemaker-%E6%95%B4%E5%90%88/" itemprop="url">
-            <span itemprop="name">Spring Boot + Freemaker 整合</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-30T12:24:16+08:00"
-              content="2020-03-30">
-          03-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">
-            <span itemprop="name">SQL学习笔记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-03-30T10:45:02+08:00"
-              content="2020-03-30">
-          03-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/" itemprop="url">
-            <span itemprop="name">IDEA+Spring Boot+Mybatis+MySQL整合</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+<p>property为实体类属性名，column为数据库字段名，这样直接映射就能解决问题啦！</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+	
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-----------看到底线啦 <i class="fa fa-paw"></i> 感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Len
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://lenjon.xyz/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/" title="Mybatis带下划线字段查询结果为空">http://lenjon.xyz/2020/04/09/Mybatis带下划线字段查询结果为空/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+              <a href="/tags/Java-Web/" rel="tag"><i class="fa fa-tag"></i> Java Web</a>
+              <a href="/tags/Mybatis/" rel="tag"><i class="fa fa-tag"></i> Mybatis</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/" rel="prev" title="利用Springboot和Freemaker简单模拟登录系统">
+      <i class="fa fa-chevron-left"></i> 利用Springboot和Freemaker简单模拟登录系统
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -429,6 +394,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mybatis带下划线字段查询结果为空"><span class="nav-number">1.</span> <span class="nav-text">Mybatis带下划线字段查询结果为空</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
