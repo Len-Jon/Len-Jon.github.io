@@ -84,9 +84,9 @@
       
         <tags>
             
-            <tag> MySQL </tag>
-            
             <tag> Mybatis </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -167,13 +167,13 @@
       
         <tags>
             
+            <tag> Mybatis </tag>
+            
             <tag> MySQL </tag>
             
             <tag> Spring Web </tag>
             
             <tag> Apache Freemaker </tag>
-            
-            <tag> Mybatis </tag>
             
         </tags>
       
@@ -279,11 +279,11 @@
       
         <tags>
             
+            <tag> Mybatis </tag>
+            
             <tag> MySQL </tag>
             
             <tag> Spring Web </tag>
-            
-            <tag> Mybatis </tag>
             
         </tags>
       

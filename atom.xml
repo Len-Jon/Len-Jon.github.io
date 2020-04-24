@@ -97,9 +97,9 @@
       <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
-      <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
-    
       <category term="Mybatis" scheme="http://lenjon.xyz/tags/Mybatis/"/>
+    
+      <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
     
   </entry>
   
@@ -179,13 +179,13 @@
       <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
+      <category term="Mybatis" scheme="http://lenjon.xyz/tags/Mybatis/"/>
+    
       <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
     
       <category term="Spring Web" scheme="http://lenjon.xyz/tags/Spring-Web/"/>
     
       <category term="Apache Freemaker" scheme="http://lenjon.xyz/tags/Apache-Freemaker/"/>
-    
-      <category term="Mybatis" scheme="http://lenjon.xyz/tags/Mybatis/"/>
     
   </entry>
   
@@ -283,11 +283,11 @@
       <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
+      <category term="Mybatis" scheme="http://lenjon.xyz/tags/Mybatis/"/>
+    
       <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
     
       <category term="Spring Web" scheme="http://lenjon.xyz/tags/Spring-Web/"/>
-    
-      <category term="Mybatis" scheme="http://lenjon.xyz/tags/Mybatis/"/>
     
   </entry>
   
