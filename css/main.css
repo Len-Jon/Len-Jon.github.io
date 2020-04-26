@@ -1340,7 +1340,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e3ffaf;
+  background: #300ee3;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2741,7 +2741,7 @@ ul.breadcrumb li + li:last-child {
   white-space: nowrap;
 }
 body {
-  background: url("/images/background.jpg");
+  background: url("/images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -2813,17 +2813,21 @@ pre .deletion {
   background: #fdd;
 }
 @media (min-width: 1200px) {
+  .header {
+    width: 1020px;
+  }
+  .footer-inner {
+    width: 1020px;
+  }
   .main-inner {
     width: 1020px;
   }
 }
-@media (min-width: 1200px) {
-  .header {
-    width: 1020px;
-  }
-}
-@media (min-width: 1200px) {
-  .footer-inner {
-    width: 1020px;
+@media screen and (max-width: 991px) {
+  body {
+    background: url("/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 }

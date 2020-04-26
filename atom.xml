@@ -77,33 +77,6 @@
   </entry>
   
   <entry>
-    <title>Mybatis带下划线字段查询结果为空</title>
-    <link href="http://lenjon.xyz/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/"/>
-    <id>http://lenjon.xyz/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/</id>
-    <published>2020-04-09T15:04:04.000Z</published>
-    <updated>2020-04-15T12:33:41.393Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Mybatis带下划线字段查询结果为空"><a href="#Mybatis带下划线字段查询结果为空" class="headerlink" title="Mybatis带下划线字段查询结果为空"></a>Mybatis带下划线字段查询结果为空</h1><p>今天在制作酒店管理系统的员工部分时发现了个问题：</p><a id="more"></a><p><img src="/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/qq1.png" alt></p><p>job_number为工号，数据库中是有值的，写入也没问题，于是直接get方法看一下返回的json：</p><p><img src="/2020/04/09/Mybatis%E5%B8%A6%E4%B8%8B%E5%88%92%E7%BA%BF%E5%AD%97%E6%AE%B5%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E4%B8%BA%E7%A9%BA/qq2.png" alt></p><p>咦？带下划线的字段都没读出来？</p><p>经过搜索，发现是由于驼峰规则的原因导致的，我又不想改配置，不想改实体，咋办呢？</p><p>使用@Results和@Result注解：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Select</span>(&#123;<span class="string">"select * from employee where id=#&#123;id&#125;"</span>&#125;)</span><br><span class="line"><span class="meta">@Results</span>(&#123;</span><br><span class="line">        <span class="meta">@Result</span>(column=<span class="string">"id_card"</span>, property=<span class="string">"id_card"</span>, jdbcType=JdbcType.VARCHAR),</span><br><span class="line">        <span class="meta">@Result</span>(column=<span class="string">"job_number"</span>, property=<span class="string">"job_number"</span>, jdbcType=JdbcType.INTEGER)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Employee <span class="title">selectById</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br></pre></td></tr></table></figure><p>property为实体类属性名，column为数据库字段名，这样直接映射就能解决问题啦！</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Mybatis带下划线字段查询结果为空&quot;&gt;&lt;a href=&quot;#Mybatis带下划线字段查询结果为空&quot; class=&quot;headerlink&quot; title=&quot;Mybatis带下划线字段查询结果为空&quot;&gt;&lt;/a&gt;Mybatis带下划线字段查询结果为空&lt;/h1&gt;&lt;p&gt;今天在制作酒店管理系统的员工部分时发现了个问题：&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="http://lenjon.xyz/categories/Java/"/>
-    
-      <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
-    
-    
-      <category term="Mybatis" scheme="http://lenjon.xyz/tags/Mybatis/"/>
-    
-      <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>利用Springboot和Freemaker简单模拟登录系统</title>
     <link href="http://lenjon.xyz/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/"/>
     <id>http://lenjon.xyz/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/</id>
