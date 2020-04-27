@@ -49,11 +49,11 @@
       
         <tags>
             
-            <tag> Spring Web </tag>
-            
             <tag> MySQL </tag>
             
-            <tag> Apache Freemaker </tag>
+            <tag> Spring Web </tag>
+            
+            <tag> Apache Freemarker </tag>
             
             <tag> hAdmin </tag>
             
@@ -66,7 +66,7 @@
     
     
     <entry>
-      <title>利用Springboot和Freemaker简单模拟登录系统</title>
+      <title>利用Springboot和Freemarker简单模拟登录系统</title>
       <link href="/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/"/>
       <url>/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/</url>
       
@@ -86,7 +86,7 @@
             
             <tag> Spring Web </tag>
             
-            <tag> Apache Freemaker </tag>
+            <tag> Apache Freemarker </tag>
             
         </tags>
       
@@ -138,13 +138,13 @@
       
         <tags>
             
-            <tag> Spring Web </tag>
-            
-            <tag> Mybatis </tag>
-            
             <tag> MySQL </tag>
             
-            <tag> Apache Freemaker </tag>
+            <tag> Spring Web </tag>
+            
+            <tag> Apache Freemarker </tag>
+            
+            <tag> Mybatis </tag>
             
         </tags>
       
@@ -178,9 +178,9 @@
     
     
     <entry>
-      <title>Spring Boot + Freemaker 整合</title>
-      <link href="/2020/03/30/Spring-Boot-Freemaker-%E6%95%B4%E5%90%88/"/>
-      <url>/2020/03/30/Spring-Boot-Freemaker-%E6%95%B4%E5%90%88/</url>
+      <title>Spring Boot + Freemarker 整合</title>
+      <link href="/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/"/>
+      <url>/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/</url>
       
         <content type="html"><![CDATA[<p>编译器：IntelliJ IDEA</p><h1 id="建项目"><a href="#建项目" class="headerlink" title="建项目"></a>建项目</h1><p><img src="https://img-blog.csdnimg.cn/20200402103842534.png" alt="在这里插入图片描述"></p><h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>配置<strong>application.properties</strong><br>第一行就是声明要打开的页面的根目录</p><figure class="highlight plain"><figcaption><span>src/main/resources/application.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring.freemarker.template-loader-path&#x3D;classpath:&#x2F;templates</span><br><span class="line">spring.freemarker.cache&#x3D;false</span><br><span class="line">spring.freemarker.charset&#x3D;UTF-8</span><br><span class="line">spring.freemarker.check-template-location&#x3D;true</span><br><span class="line">spring.freemarker.content-type&#x3D;text&#x2F;html</span><br><span class="line">spring.freemarker.expose-request-attributes&#x3D;false</span><br><span class="line">spring.freemarker.expose-session-attributes&#x3D;false</span><br><span class="line">spring.freemarker.request-context-attribute&#x3D;request</span><br><span class="line">spring.freemarker.suffix&#x3D;.ftl</span><br></pre></td></tr></table></figure><h1 id="编写页面"><a href="#编写页面" class="headerlink" title="编写页面"></a>编写页面</h1><h2 id="主页面"><a href="#主页面" class="headerlink" title="主页面"></a>主页面</h2><p>资源文件夹下新建一个index.html（idea会帮你写好框架，在<code>&lt;body&gt;</code>和<code>&lt;/body&gt;</code>中间写入Hello World！</p><figure class="highlight html"><figcaption><span>src/main/resources/templates/index.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">Hello World!</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p>然后改为*.ftl（Freemaker的格式）</p><h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><figure class="highlight java"><figcaption><span>src\main\java\com.example.demo\Controller\Hellocontroller.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo.Controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hellocontroller</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value=<span class="string">"/"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"index"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>注意这里不能用RestController注解</p><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>运行<br>打开浏览器输入</p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:<span class="number">8080</span></span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/20200402103957543.png#pic_center" alt="在这里插入图片描述"></p>]]></content>
       
@@ -198,7 +198,7 @@
             
             <tag> Spring Web </tag>
             
-            <tag> Apache Freemaker </tag>
+            <tag> Apache Freemarker </tag>
             
         </tags>
       
@@ -250,11 +250,11 @@
       
         <tags>
             
+            <tag> MySQL </tag>
+            
             <tag> Spring Web </tag>
             
             <tag> Mybatis </tag>
-            
-            <tag> MySQL </tag>
             
         </tags>
       
