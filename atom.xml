@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Len&#39;s Blog</title>
-  <icon>https://len-jon.gitee.io/icon.png</icon>
+  <icon>http://lenjon.xyz/icon.png</icon>
   <subtitle>欢迎来到我的秋秋空间~</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://len-jon.gitee.io/"/>
+  <link href="http://lenjon.xyz/"/>
   <updated>2020-04-26T15:14:30.685Z</updated>
-  <id>https://len-jon.gitee.io/</id>
+  <id>http://lenjon.xyz/</id>
   
   <author>
     <name>Len</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title> Spring Boot整合Web层技术</title>
-    <link href="https://len-jon.gitee.io/2020/04/15/Spring-Boot%E6%95%B4%E5%90%88Web%E5%B1%82%E6%8A%80%E6%9C%AF/"/>
-    <id>https://len-jon.gitee.io/2020/04/15/Spring-Boot%E6%95%B4%E5%90%88Web%E5%B1%82%E6%8A%80%E6%9C%AF/</id>
+    <link href="http://lenjon.xyz/2020/04/15/Spring-Boot%E6%95%B4%E5%90%88Web%E5%B1%82%E6%8A%80%E6%9C%AF/"/>
+    <id>http://lenjon.xyz/2020/04/15/Spring-Boot%E6%95%B4%E5%90%88Web%E5%B1%82%E6%8A%80%E6%9C%AF/</id>
     <published>2020-04-15T12:16:28.000Z</published>
     <updated>2020-04-26T15:14:30.685Z</updated>
     
@@ -30,19 +30,19 @@
     </summary>
     
     
-      <category term="Java" scheme="https://len-jon.gitee.io/categories/Java/"/>
+      <category term="Java" scheme="http://lenjon.xyz/categories/Java/"/>
     
-      <category term="Spring Boot" scheme="https://len-jon.gitee.io/categories/Java/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
-      <category term="Spring Web" scheme="https://len-jon.gitee.io/tags/Spring-Web/"/>
+      <category term="Spring Web" scheme="http://lenjon.xyz/tags/Spring-Web/"/>
     
   </entry>
   
   <entry>
     <title>基于hAdmin的酒店管理系统</title>
-    <link href="https://len-jon.gitee.io/2020/04/11/%E5%9F%BA%E4%BA%8EhAdmin%E7%9A%84%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://len-jon.gitee.io/2020/04/11/%E5%9F%BA%E4%BA%8EhAdmin%E7%9A%84%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</id>
+    <link href="http://lenjon.xyz/2020/04/11/%E5%9F%BA%E4%BA%8EhAdmin%E7%9A%84%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://lenjon.xyz/2020/04/11/%E5%9F%BA%E4%BA%8EhAdmin%E7%9A%84%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</id>
     <published>2020-04-11T12:30:26.000Z</published>
     <updated>2020-04-27T03:12:41.918Z</updated>
     
@@ -55,27 +55,27 @@
     </summary>
     
     
-      <category term="Java" scheme="https://len-jon.gitee.io/categories/Java/"/>
+      <category term="Java" scheme="http://lenjon.xyz/categories/Java/"/>
     
-      <category term="Spring Boot" scheme="https://len-jon.gitee.io/categories/Java/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
-      <category term="MySQL" scheme="https://len-jon.gitee.io/tags/MySQL/"/>
+      <category term="Spring Web" scheme="http://lenjon.xyz/tags/Spring-Web/"/>
     
-      <category term="Spring Web" scheme="https://len-jon.gitee.io/tags/Spring-Web/"/>
+      <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
     
-      <category term="Apache Freemarker" scheme="https://len-jon.gitee.io/tags/Apache-Freemarker/"/>
+      <category term="Apache Freemarker" scheme="http://lenjon.xyz/tags/Apache-Freemarker/"/>
     
-      <category term="hAdmin" scheme="https://len-jon.gitee.io/tags/hAdmin/"/>
+      <category term="hAdmin" scheme="http://lenjon.xyz/tags/hAdmin/"/>
     
-      <category term="MyBatis Plus" scheme="https://len-jon.gitee.io/tags/MyBatis-Plus/"/>
+      <category term="MyBatis Plus" scheme="http://lenjon.xyz/tags/MyBatis-Plus/"/>
     
   </entry>
   
   <entry>
     <title>利用Springboot和Freemarker简单模拟登录系统</title>
-    <link href="https://len-jon.gitee.io/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://len-jon.gitee.io/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/</id>
+    <link href="http://lenjon.xyz/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://lenjon.xyz/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/</id>
     <published>2020-04-07T01:53:30.000Z</published>
     <updated>2020-04-27T03:12:36.980Z</updated>
     
@@ -86,21 +86,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://len-jon.gitee.io/categories/Java/"/>
+      <category term="Java" scheme="http://lenjon.xyz/categories/Java/"/>
     
-      <category term="Spring Boot" scheme="https://len-jon.gitee.io/categories/Java/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
-      <category term="Spring Web" scheme="https://len-jon.gitee.io/tags/Spring-Web/"/>
+      <category term="Spring Web" scheme="http://lenjon.xyz/tags/Spring-Web/"/>
     
-      <category term="Apache Freemarker" scheme="https://len-jon.gitee.io/tags/Apache-Freemarker/"/>
+      <category term="Apache Freemarker" scheme="http://lenjon.xyz/tags/Apache-Freemarker/"/>
     
   </entry>
   
   <entry>
     <title>利用Apache爬取微博首页的推荐</title>
-    <link href="https://len-jon.gitee.io/2020/04/04/%E5%88%A9%E7%94%A8Apache%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE/"/>
-    <id>https://len-jon.gitee.io/2020/04/04/%E5%88%A9%E7%94%A8Apache%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE/</id>
+    <link href="http://lenjon.xyz/2020/04/04/%E5%88%A9%E7%94%A8Apache%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE/"/>
+    <id>http://lenjon.xyz/2020/04/04/%E5%88%A9%E7%94%A8Apache%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE/</id>
     <published>2020-04-04T14:21:33.000Z</published>
     <updated>2020-04-15T12:32:37.314Z</updated>
     
@@ -116,17 +116,17 @@
     </summary>
     
     
-      <category term="Java" scheme="https://len-jon.gitee.io/categories/Java/"/>
+      <category term="Java" scheme="http://lenjon.xyz/categories/Java/"/>
     
     
-      <category term="Apache" scheme="https://len-jon.gitee.io/tags/Apache/"/>
+      <category term="Apache" scheme="http://lenjon.xyz/tags/Apache/"/>
     
   </entry>
   
   <entry>
     <title>为数据库操作添加前端页面</title>
-    <link href="https://len-jon.gitee.io/2020/04/02/%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/"/>
-    <id>https://len-jon.gitee.io/2020/04/02/%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/</id>
+    <link href="http://lenjon.xyz/2020/04/02/%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/"/>
+    <id>http://lenjon.xyz/2020/04/02/%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/</id>
     <published>2020-04-02T12:44:32.000Z</published>
     <updated>2020-04-27T03:12:27.006Z</updated>
     
@@ -137,25 +137,25 @@
     </summary>
     
     
-      <category term="Java" scheme="https://len-jon.gitee.io/categories/Java/"/>
+      <category term="Java" scheme="http://lenjon.xyz/categories/Java/"/>
     
-      <category term="Spring Boot" scheme="https://len-jon.gitee.io/categories/Java/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
-      <category term="MySQL" scheme="https://len-jon.gitee.io/tags/MySQL/"/>
+      <category term="Spring Web" scheme="http://lenjon.xyz/tags/Spring-Web/"/>
     
-      <category term="Spring Web" scheme="https://len-jon.gitee.io/tags/Spring-Web/"/>
+      <category term="Mybatis" scheme="http://lenjon.xyz/tags/Mybatis/"/>
     
-      <category term="Apache Freemarker" scheme="https://len-jon.gitee.io/tags/Apache-Freemarker/"/>
+      <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
     
-      <category term="Mybatis" scheme="https://len-jon.gitee.io/tags/Mybatis/"/>
+      <category term="Apache Freemarker" scheme="http://lenjon.xyz/tags/Apache-Freemarker/"/>
     
   </entry>
   
   <entry>
     <title>服务器配置Java环境并安装MySQL</title>
-    <link href="https://len-jon.gitee.io/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/"/>
-    <id>https://len-jon.gitee.io/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/</id>
+    <link href="http://lenjon.xyz/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/"/>
+    <id>http://lenjon.xyz/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/</id>
     <published>2020-03-31T04:42:52.000Z</published>
     <updated>2020-04-27T03:12:44.025Z</updated>
     
@@ -166,17 +166,17 @@
     </summary>
     
     
-      <category term="服务器" scheme="https://len-jon.gitee.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="服务器" scheme="http://lenjon.xyz/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
     
-      <category term="MySQL" scheme="https://len-jon.gitee.io/tags/MySQL/"/>
+      <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot + Freemarker 整合</title>
-    <link href="https://len-jon.gitee.io/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/"/>
-    <id>https://len-jon.gitee.io/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/</id>
+    <link href="http://lenjon.xyz/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/"/>
+    <id>http://lenjon.xyz/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/</id>
     <published>2020-03-30T15:56:34.000Z</published>
     <updated>2020-04-27T03:12:15.060Z</updated>
     
@@ -187,21 +187,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://len-jon.gitee.io/categories/Java/"/>
+      <category term="Java" scheme="http://lenjon.xyz/categories/Java/"/>
     
-      <category term="Spring Boot" scheme="https://len-jon.gitee.io/categories/Java/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
-      <category term="Spring Web" scheme="https://len-jon.gitee.io/tags/Spring-Web/"/>
+      <category term="Spring Web" scheme="http://lenjon.xyz/tags/Spring-Web/"/>
     
-      <category term="Apache Freemarker" scheme="https://len-jon.gitee.io/tags/Apache-Freemarker/"/>
+      <category term="Apache Freemarker" scheme="http://lenjon.xyz/tags/Apache-Freemarker/"/>
     
   </entry>
   
   <entry>
     <title>SQL学习笔记</title>
-    <link href="https://len-jon.gitee.io/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://len-jon.gitee.io/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="http://lenjon.xyz/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://lenjon.xyz/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2020-03-30T04:24:16.000Z</published>
     <updated>2020-04-16T08:29:27.036Z</updated>
     
@@ -212,17 +212,17 @@
     </summary>
     
     
-      <category term="SQL" scheme="https://len-jon.gitee.io/categories/SQL/"/>
+      <category term="SQL" scheme="http://lenjon.xyz/categories/SQL/"/>
     
     
-      <category term="MySQL" scheme="https://len-jon.gitee.io/tags/MySQL/"/>
+      <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>IDEA+Spring Boot+Mybatis+MySQL整合</title>
-    <link href="https://len-jon.gitee.io/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/"/>
-    <id>https://len-jon.gitee.io/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/</id>
+    <link href="http://lenjon.xyz/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/"/>
+    <id>http://lenjon.xyz/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/</id>
     <published>2020-03-30T02:45:02.000Z</published>
     <updated>2020-04-19T09:18:02.400Z</updated>
     
@@ -233,23 +233,23 @@
     </summary>
     
     
-      <category term="Java" scheme="https://len-jon.gitee.io/categories/Java/"/>
+      <category term="Java" scheme="http://lenjon.xyz/categories/Java/"/>
     
-      <category term="Spring Boot" scheme="https://len-jon.gitee.io/categories/Java/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
-      <category term="MySQL" scheme="https://len-jon.gitee.io/tags/MySQL/"/>
+      <category term="Spring Web" scheme="http://lenjon.xyz/tags/Spring-Web/"/>
     
-      <category term="Spring Web" scheme="https://len-jon.gitee.io/tags/Spring-Web/"/>
+      <category term="Mybatis" scheme="http://lenjon.xyz/tags/Mybatis/"/>
     
-      <category term="Mybatis" scheme="https://len-jon.gitee.io/tags/Mybatis/"/>
+      <category term="MySQL" scheme="http://lenjon.xyz/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Spring Boot运行Hello, world!</title>
-    <link href="https://len-jon.gitee.io/2020/03/20/Spring-Boot%E8%BF%90%E8%A1%8CHello-world/"/>
-    <id>https://len-jon.gitee.io/2020/03/20/Spring-Boot%E8%BF%90%E8%A1%8CHello-world/</id>
+    <link href="http://lenjon.xyz/2020/03/20/Spring-Boot%E8%BF%90%E8%A1%8CHello-world/"/>
+    <id>http://lenjon.xyz/2020/03/20/Spring-Boot%E8%BF%90%E8%A1%8CHello-world/</id>
     <published>2020-03-20T07:46:29.000Z</published>
     <updated>2020-04-26T14:49:41.188Z</updated>
     
@@ -260,12 +260,12 @@
     </summary>
     
     
-      <category term="Java" scheme="https://len-jon.gitee.io/categories/Java/"/>
+      <category term="Java" scheme="http://lenjon.xyz/categories/Java/"/>
     
-      <category term="Spring Boot" scheme="https://len-jon.gitee.io/categories/Java/Spring-Boot/"/>
+      <category term="Spring Boot" scheme="http://lenjon.xyz/categories/Java/Spring-Boot/"/>
     
     
-      <category term="Spring Web" scheme="https://len-jon.gitee.io/tags/Spring-Web/"/>
+      <category term="Spring Web" scheme="http://lenjon.xyz/tags/Spring-Web/"/>
     
   </entry>
   
