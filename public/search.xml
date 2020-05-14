@@ -172,9 +172,9 @@
         <category>Spring Boot</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>Spring Web</tag>
         <tag>Apache Freemarker</tag>
+        <tag>MySQL</tag>
         <tag>MyBatis Plus</tag>
       </tags>
   </entry>
@@ -294,9 +294,9 @@ cp(no)->lo</textarea><textarea id="flowchart-0-options" style="display: none">{"
         <category>Spring Boot</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>Spring Web</tag>
         <tag>Apache Freemarker</tag>
+        <tag>MySQL</tag>
         <tag>MyBatis Plus</tag>
         <tag>hAdmin</tag>
       </tags>
@@ -502,10 +502,10 @@ cp(no)->lo</textarea><textarea id="flowchart-0-options" style="display: none">{"
         <category>Spring Boot</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>Spring Web</tag>
-        <tag>Mybatis</tag>
         <tag>Apache Freemarker</tag>
+        <tag>MySQL</tag>
+        <tag>Mybatis</tag>
       </tags>
   </entry>
   <entry>
@@ -862,8 +862,8 @@ cp(no)->lo</textarea><textarea id="flowchart-0-options" style="display: none">{"
         <category>Spring Boot</category>
       </categories>
       <tags>
-        <tag>MySQL</tag>
         <tag>Spring Web</tag>
+        <tag>MySQL</tag>
         <tag>Mybatis</tag>
       </tags>
   </entry>

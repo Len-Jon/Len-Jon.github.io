@@ -1340,7 +1340,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff5095;
+  background: #91ff41;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2835,7 +2835,7 @@ body {
   border-top-right-radius: 10px;
 }
 .beian a {
-  color: #0fd;
+  color: #ff8c00;
 }
 .copyright {
   background: rgba(255,255,255,0.9);
