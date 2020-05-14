@@ -1340,7 +1340,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9fc8dd;
+  background: #ff5095;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2829,13 +2829,16 @@ body {
     display: none;
   }
 }
+.beian {
+  background: rgba(255,255,255,0.9);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 .beian a {
   color: #0fd;
 }
 .copyright {
   background: rgba(255,255,255,0.9);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   color: #0fd;
 }
 .busuanzi-count {
