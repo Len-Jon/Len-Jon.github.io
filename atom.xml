@@ -35,9 +35,9 @@
       <category term="Spring Boot" scheme="http://39.97.171.86/categories/Java/Spring-Boot/"/>
     
     
-      <category term="Spring Web" scheme="http://39.97.171.86/tags/Spring-Web/"/>
-    
       <category term="MySQL" scheme="http://39.97.171.86/tags/MySQL/"/>
+    
+      <category term="Spring Web" scheme="http://39.97.171.86/tags/Spring-Web/"/>
     
       <category term="Apache Freemarker" scheme="http://39.97.171.86/tags/Apache-Freemarker/"/>
     
@@ -89,9 +89,9 @@
       <category term="Spring Boot" scheme="http://39.97.171.86/categories/Java/Spring-Boot/"/>
     
     
-      <category term="Spring Web" scheme="http://39.97.171.86/tags/Spring-Web/"/>
-    
       <category term="MySQL" scheme="http://39.97.171.86/tags/MySQL/"/>
+    
+      <category term="Spring Web" scheme="http://39.97.171.86/tags/Spring-Web/"/>
     
       <category term="Apache Freemarker" scheme="http://39.97.171.86/tags/Apache-Freemarker/"/>
     
@@ -171,13 +171,13 @@
       <category term="Spring Boot" scheme="http://39.97.171.86/categories/Java/Spring-Boot/"/>
     
     
-      <category term="Spring Web" scheme="http://39.97.171.86/tags/Spring-Web/"/>
-    
-      <category term="Mybatis" scheme="http://39.97.171.86/tags/Mybatis/"/>
-    
       <category term="MySQL" scheme="http://39.97.171.86/tags/MySQL/"/>
     
+      <category term="Spring Web" scheme="http://39.97.171.86/tags/Spring-Web/"/>
+    
       <category term="Apache Freemarker" scheme="http://39.97.171.86/tags/Apache-Freemarker/"/>
+    
+      <category term="Mybatis" scheme="http://39.97.171.86/tags/Mybatis/"/>
     
   </entry>
   
@@ -267,11 +267,11 @@
       <category term="Spring Boot" scheme="http://39.97.171.86/categories/Java/Spring-Boot/"/>
     
     
+      <category term="MySQL" scheme="http://39.97.171.86/tags/MySQL/"/>
+    
       <category term="Spring Web" scheme="http://39.97.171.86/tags/Spring-Web/"/>
     
       <category term="Mybatis" scheme="http://39.97.171.86/tags/Mybatis/"/>
-    
-      <category term="MySQL" scheme="http://39.97.171.86/tags/MySQL/"/>
     
   </entry>
   
