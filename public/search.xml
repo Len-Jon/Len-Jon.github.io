@@ -85,7 +85,10 @@
   <entry>
     <title>南邮离散数学实验</title>
     <url>/2020/05/15/%E5%8D%97%E9%82%AE%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AE%9E%E9%AA%8C/</url>
-    <content><![CDATA[<h1 id="实验一：利用真值表法求取主析取范式以及主合取范式的实现"><a href="#实验一：利用真值表法求取主析取范式以及主合取范式的实现" class="headerlink" title="实验一：利用真值表法求取主析取范式以及主合取范式的实现"></a>实验一：利用真值表法求取主析取范式以及主合取范式的实现</h1><blockquote>
+    <content><![CDATA[<div class="note warning">
+            <p>请不要照搬源代码，仅提供思路</p>
+          </div>
+<h1 id="实验一：利用真值表法求取主析取范式以及主合取范式的实现"><a href="#实验一：利用真值表法求取主析取范式以及主合取范式的实现" class="headerlink" title="实验一：利用真值表法求取主析取范式以及主合取范式的实现"></a>实验一：利用真值表法求取主析取范式以及主合取范式的实现</h1><blockquote>
 <p>实验目的：通过编程实现主析取范式以及主合取范式的真值表求法以巩固相关理论的掌握</p>
 <p>编程实现用真值表法求取含三个以内变量的合式公式的主析取范式和主合取范式</p>
 <p>要求：</p>
@@ -414,8 +417,8 @@ ch3(no)->end</textarea><textarea id="flowchart-4-options" style="display: none">
       </categories>
       <tags>
         <tag>Spring Web</tag>
-        <tag>Apache Freemarker</tag>
         <tag>MySQL</tag>
+        <tag>Apache Freemarker</tag>
         <tag>MyBatis Plus</tag>
       </tags>
   </entry>
@@ -514,8 +517,8 @@ cp(no)->lo</textarea><textarea id="flowchart-0-options" style="display: none">{"
       </categories>
       <tags>
         <tag>Spring Web</tag>
-        <tag>Apache Freemarker</tag>
         <tag>MySQL</tag>
+        <tag>Apache Freemarker</tag>
         <tag>MyBatis Plus</tag>
         <tag>hAdmin</tag>
       </tags>
@@ -691,9 +694,9 @@ cp(no)->lo</textarea><textarea id="flowchart-0-options" style="display: none">{"
       </categories>
       <tags>
         <tag>Spring Web</tag>
-        <tag>Apache Freemarker</tag>
-        <tag>MySQL</tag>
         <tag>Mybatis</tag>
+        <tag>MySQL</tag>
+        <tag>Apache Freemarker</tag>
       </tags>
   </entry>
   <entry>
@@ -984,8 +987,8 @@ cp(no)->lo</textarea><textarea id="flowchart-0-options" style="display: none">{"
       </categories>
       <tags>
         <tag>Spring Web</tag>
-        <tag>MySQL</tag>
         <tag>Mybatis</tag>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
