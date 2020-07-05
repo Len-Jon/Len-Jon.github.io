@@ -22,23 +22,25 @@
     var CONFIG = {"hostname":"39.97.171.86","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="用Freemarker搭建一个主页显示Hello world">
+  <meta name="description" content="Python后端学习 Day2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring Boot + Freemarker 整合">
-<meta property="og:url" content="http://39.97.171.86/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/index.html">
+<meta property="og:title" content="Django向后端传递参数">
+<meta property="og:url" content="http://39.97.171.86/2020/07/05/Django-params/index.html">
 <meta property="og:site_name" content="Len&#39;s 部落阁">
-<meta property="og:description" content="用Freemarker搭建一个主页显示Hello world">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200402103842534.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200402103957543.png#pic_center">
-<meta property="article:published_time" content="2020-03-30T15:56:34.000Z">
-<meta property="article:modified_time" content="2020-07-04T14:38:51.278Z">
+<meta property="og:description" content="Python后端学习 Day2">
+<meta property="og:image" content="http://39.97.171.86/2020/07/05/Django-params/image-20200705195438261.png">
+<meta property="og:image" content="http://39.97.171.86/2020/07/05/Django-params/image-20200705195838100.png">
+<meta property="og:image" content="http://39.97.171.86/2020/07/05/Django-params/image-20200705200434836.png">
+<meta property="og:image" content="http://39.97.171.86/2020/07/05/Django-params/image-20200705201404750.png">
+<meta property="og:image" content="http://39.97.171.86/2020/07/05/Django-params/image-20200705202518743.png">
+<meta property="article:published_time" content="2020-07-05T11:40:05.000Z">
+<meta property="article:modified_time" content="2020-07-05T12:25:23.756Z">
 <meta property="article:author" content="Len">
-<meta property="article:tag" content="Spring Boot">
-<meta property="article:tag" content="Apache Freemarker">
+<meta property="article:tag" content="Django">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200402103842534.png">
+<meta name="twitter:image" content="http://39.97.171.86/2020/07/05/Django-params/image-20200705195438261.png">
 
-<link rel="canonical" href="http://39.97.171.86/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/">
+<link rel="canonical" href="http://39.97.171.86/2020/07/05/Django-params/">
 
 
 <script id="page-configurations">
@@ -51,7 +53,7 @@
   };
 </script>
 
-  <title>Spring Boot + Freemarker 整合 | Len's 部落阁</title>
+  <title>Django向后端传递参数 | Len's 部落阁</title>
   
 
 
@@ -209,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://39.97.171.86/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/">
+    <link itemprop="mainEntityOfPage" href="http://39.97.171.86/2020/07/05/Django-params/">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Len">
@@ -221,7 +223,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Spring Boot + Freemarker 整合
+          Django向后端传递参数
         </h1>
 
         <div class="post-meta">
@@ -232,23 +234,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-03-30 23:56:34" itemprop="dateCreated datePublished" datetime="2020-03-30T23:56:34+08:00">2020-03-30</time>
+              <time title="创建时间：2020-07-05 19:40:05 / 修改时间：20:25:23" itemprop="dateCreated datePublished" datetime="2020-07-05T19:40:05+08:00">2020-07-05</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-04 22:38:51" itemprop="dateModified" datetime="2020-07-04T22:38:51+08:00">2020-07-04</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
             </span>
 
@@ -260,7 +256,7 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
-            <div class="post-description"><center>用Freemarker搭建一个主页显示Hello world</center></div>
+            <div class="post-description">Python后端学习 Day2</div>
 
         </div>
       </header>
@@ -271,16 +267,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>编译器：IntelliJ IDEA</p>
-<h1 id="建项目"><a href="#建项目" class="headerlink" title="建项目"></a>建项目</h1><p><img src="https://img-blog.csdnimg.cn/20200402103842534.png" alt="在这里插入图片描述"></p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>配置<strong>application.properties</strong><br>第一行就是声明要打开的页面的根目录</p>
-<figure class="highlight plain"><figcaption><span>src/main/resources/application.properties</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring.freemarker.template-loader-path&#x3D;classpath:&#x2F;templates</span><br><span class="line">spring.freemarker.cache&#x3D;false</span><br><span class="line">spring.freemarker.charset&#x3D;UTF-8</span><br><span class="line">spring.freemarker.check-template-location&#x3D;true</span><br><span class="line">spring.freemarker.content-type&#x3D;text&#x2F;html</span><br><span class="line">spring.freemarker.expose-request-attributes&#x3D;false</span><br><span class="line">spring.freemarker.expose-session-attributes&#x3D;false</span><br><span class="line">spring.freemarker.request-context-attribute&#x3D;request</span><br><span class="line">spring.freemarker.suffix&#x3D;.ftl</span><br></pre></td></tr></table></figure>
-<h1 id="编写页面"><a href="#编写页面" class="headerlink" title="编写页面"></a>编写页面</h1><h2 id="主页面"><a href="#主页面" class="headerlink" title="主页面"></a>主页面</h2><p>资源文件夹下新建一个index.html（idea会帮你写好框架，在<code>&lt;body&gt;</code>和<code>&lt;/body&gt;</code>中间写入Hello World！</p>
-<figure class="highlight html"><figcaption><span>src/main/resources/templates/index.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">Hello World!</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>然后改为*.ftl（Freemaker的格式）</p>
-<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><figure class="highlight java"><figcaption><span>src\main\java\com.example.demo\Controller\Hellocontroller.java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo.Controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hellocontroller</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value=<span class="string">"/"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"index"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意这里不能用RestController注解</p>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>运行<br>打开浏览器输入<br><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localhost:<span class="number">8080</span></span><br></pre></td></tr></table></figure><br><img src="https://img-blog.csdnimg.cn/20200402103957543.png#pic_center" alt="在这里插入图片描述"></p>
+        <h1 id="通过正则表达式传递参数"><a href="#通过正则表达式传递参数" class="headerlink" title="通过正则表达式传递参数"></a>通过正则表达式传递参数</h1><h2 id="简单实现"><a href="#简单实现" class="headerlink" title="简单实现"></a>简单实现</h2><figure class="highlight python"><figcaption><span>views.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">goodbye</span><span class="params">(request, ID, name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(str(ID) + <span class="string">' Good Bye, '</span> + name)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>urls.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    url(<span class="string">r'^goodbye/(\d+)/(\w+)/$'</span>, views.goodbye),  <span class="comment"># 参数传递方式一，不指定变量名</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>最后的<code>$</code>表示链接后边不管是啥也要用goodbye这个函数，比如</p>
+<blockquote>
+<p>localhost:8000/goodbye/1/wei/a</p>
+<p>localhost:8000/goodbye/1/wei/b</p>
+<p>都同等与</p>
+<p>localhost:8000/goodbye/1/wei/</p>
+</blockquote>
+<p>效果：</p>
+<p><img src="/2020/07/05/Django-params/image-20200705195438261.png" alt="image-20200705195438261"></p>
+<p>在映射的方法中按照连接中正则表达式的先后顺序传值给函数</p>
+<h2 id="绑定变量名"><a href="#绑定变量名" class="headerlink" title="绑定变量名"></a>绑定变量名</h2><p>如果我们链接中出现正则表达式的顺序与变量名不同，需要绑定参数名</p>
+<figure class="highlight python"><figcaption><span>views.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">msg</span><span class="params">(request, age, name)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">'My name is '</span> + name + <span class="string">',i am '</span> + age + <span class="string">' years old'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>urls.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    url(<span class="string">r'^msg/(?P&lt;name&gt;\w+)/(?P&lt;age&gt;\d+)/$'</span>, views.msg),  <span class="comment"># 参数传递方式二，正则表达式与变量名绑定</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="/2020/07/05/Django-params/image-20200705195838100.png" alt="image-20200705195838100"></p>
+<h1 id="通过请求传递参数"><a href="#通过请求传递参数" class="headerlink" title="通过请求传递参数"></a>通过请求传递参数</h1><h2 id="GET请求"><a href="#GET请求" class="headerlink" title="GET请求"></a>GET请求</h2><figure class="highlight python"><figcaption><span>views.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'GET'</span>:</span><br><span class="line">        ID = request.GET.get(<span class="string">'id'</span>, default=<span class="number">0</span>)</span><br><span class="line">        name = request.GET.get(<span class="string">'name'</span>, default=<span class="string">'undefined'</span>)</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">'Your id is '</span> + str(ID) + <span class="string">', and your name is '</span> + name)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>urls.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    url(<span class="string">r'^get/$'</span>, views.get),  <span class="comment"># 参数传递方式三，GET请求</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>request.GET是一个dict类型，我们用`request.GET[‘变量名’]的方式也可以。</p>
+<p>效果：</p>
+<p><img src="/2020/07/05/Django-params/image-20200705200434836.png" alt="image-20200705200434836"></p>
+<h2 id="POST请求"><a href="#POST请求" class="headerlink" title="POST请求"></a>POST请求</h2><figure class="highlight python"><figcaption><span>views.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@csrf_exempt</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        ID = request.POST.get(<span class="string">'id'</span>, default=<span class="number">0</span>)</span><br><span class="line">        name = request.POST.get(<span class="string">'name'</span>, default=<span class="string">'undefined'</span>)</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">'Your id is '</span> + str(ID) + <span class="string">', and your name is '</span> + name)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><figcaption><span>urls.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    url(<span class="string">r'^post/$'</span>, views.post),  <span class="comment"># 参数传递方式四，Post请求</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>注意此处的装饰器<code>@csrf_exempt</code></p>
+<p>因为当用post提交数据的时候，Django会去检查是否有一个csrf的随机字符串，否则会拦截。</p>
+<p>因为我用的是postman，所以跨站请求会被拦截，有两种解决方式：</p>
+<ol>
+<li>添加装饰器</li>
+<li>注释掉相关中间件</li>
+</ol>
+<p>我选择的第一种，第二种方式为：</p>
+<figure class="highlight diff"><figcaption><span>settings.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MIDDLEWARE = [</span><br><span class="line">    'django.middleware.security.SecurityMiddleware',</span><br><span class="line">    'django.contrib.sessions.middleware.SessionMiddleware',</span><br><span class="line">    'django.middleware.common.CommonMiddleware',</span><br><span class="line"><span class="deletion">-   'django.middleware.csrf.CsrfViewMiddleware',</span></span><br><span class="line"><span class="addition">+   #'django.middleware.csrf.CsrfViewMiddleware',</span></span><br><span class="line">    'django.contrib.auth.middleware.AuthenticationMiddleware',</span><br><span class="line">    'django.contrib.messages.middleware.MessageMiddleware',</span><br><span class="line">    'django.middleware.clickjacking.XFrameOptionsMiddleware',</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>在第二种方式下，使用<code>@csrf_protect</code>为当前函数强制设置防跨站请求伪造功能，即便settings中没有设置全局中间件。</p>
+<p>效果：</p>
+<p><img src="/2020/07/05/Django-params/image-20200705201404750.png" alt="image-20200705201404750"></p>
+<h1 id="坑点"><a href="#坑点" class="headerlink" title="坑点"></a>坑点</h1><ol>
+<li><p>post的请求链接最后的<code>/</code>别忘了</p>
+</li>
+<li><p>这里只能用表单形式（x-www-form-urlencoded），json格式传递之后要获取请求体并处理。</p>
+<figure class="highlight python"><figcaption><span>views.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@csrf_exempt</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postJson</span><span class="params">(request)</span>:</span></span><br><span class="line">    print(request.body)</span><br><span class="line">    <span class="keyword">return</span> JsonResponse(&#123;<span class="string">'status'</span>: <span class="number">200</span>, <span class="string">'result'</span>: str(request.body)&#125;)</span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="/2020/07/05/Django-params/image-20200705202518743.png" alt="image-20200705202518743"></p>
+</li>
+</ol>
 
     </div>
 
@@ -307,7 +338,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://39.97.171.86/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/" title="Spring Boot + Freemarker 整合">http://39.97.171.86/2020/03/30/Spring-Boot-Freemarker-整合/</a>
+    <a href="http://39.97.171.86/2020/07/05/Django-params/" title="Django向后端传递参数">http://39.97.171.86/2020/07/05/Django-params/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -339,8 +370,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/Spring-Boot/" rel="tag"><i class="fa fa-tag"></i> Spring Boot</a>
-              <a href="/tags/Apache-Freemarker/" rel="tag"><i class="fa fa-tag"></i> Apache Freemarker</a>
+              <a href="/tags/Django/" rel="tag"><i class="fa fa-tag"></i> Django</a>
           </div>
 
         
@@ -349,13 +379,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="SQL学习笔记">
-      <i class="fa fa-chevron-left"></i> SQL学习笔记
+    <a href="/2020/07/04/Django-HelloWorld/" rel="prev" title="Django入门-HelloWorld">
+      <i class="fa fa-chevron-left"></i> Django入门-HelloWorld
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/" rel="next" title="服务器配置Java环境并安装MySQL">
-      服务器配置Java环境并安装MySQL <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -416,7 +443,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#建项目"><span class="nav-number">1.</span> <span class="nav-text">建项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编写页面"><span class="nav-number">3.</span> <span class="nav-text">编写页面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主页面"><span class="nav-number">3.1.</span> <span class="nav-text">主页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller"><span class="nav-number">3.2.</span> <span class="nav-text">Controller</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#通过正则表达式传递参数"><span class="nav-number">1.</span> <span class="nav-text">通过正则表达式传递参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单实现"><span class="nav-number">1.1.</span> <span class="nav-text">简单实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定变量名"><span class="nav-number">1.2.</span> <span class="nav-text">绑定变量名</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过请求传递参数"><span class="nav-number">2.</span> <span class="nav-text">通过请求传递参数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GET请求"><span class="nav-number">2.1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST请求"><span class="nav-number">2.2.</span> <span class="nav-text">POST请求</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#坑点"><span class="nav-number">3.</span> <span class="nav-text">坑点</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
