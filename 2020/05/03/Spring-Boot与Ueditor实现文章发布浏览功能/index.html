@@ -25,29 +25,29 @@
   <meta name="description" content="本来还想实现编辑功能的，但是因为要准备软件杯，还有任选课的论文，有时间再完善吧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring Boot与Ueditor实现文章发布浏览功能">
-<meta property="og:url" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:url" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/index.html">
 <meta property="og:site_name" content="Len&#39;s 部落阁">
 <meta property="og:description" content="本来还想实现编辑功能的，但是因为要准备软件杯，还有任选课的论文，有时间再完善吧">
-<meta property="og:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/001.png">
-<meta property="og:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/image-20200503131204863.png">
-<meta property="og:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/002.png">
-<meta property="og:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/003.png">
-<meta property="og:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/004.png">
-<meta property="og:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/005.png">
-<meta property="og:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/picture1.png">
-<meta property="og:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/picture2.png">
-<meta property="og:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/picture3.png">
+<meta property="og:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/001.png">
+<meta property="og:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/image-20200503131204863.png">
+<meta property="og:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/002.png">
+<meta property="og:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/003.png">
+<meta property="og:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/004.png">
+<meta property="og:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/005.png">
+<meta property="og:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/picture1.png">
+<meta property="og:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/picture2.png">
+<meta property="og:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/picture3.png">
 <meta property="article:published_time" content="2020-05-03T04:22:06.000Z">
 <meta property="article:modified_time" content="2020-07-04T15:36:44.847Z">
 <meta property="article:author" content="Len">
-<meta property="article:tag" content="MySQL">
 <meta property="article:tag" content="Spring Boot">
 <meta property="article:tag" content="Apache Freemarker">
 <meta property="article:tag" content="MyBatis Plus">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/001.png">
+<meta name="twitter:image" content="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/001.png">
 
-<link rel="canonical" href="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/">
+<link rel="canonical" href="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/">
 
 
 <script id="page-configurations">
@@ -218,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/">
+    <link itemprop="mainEntityOfPage" href="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Len">
@@ -353,7 +353,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/" title="Spring Boot与Ueditor实现文章发布浏览功能">http://lenjon.top/2020/05/03/Spring-Boot与Ueditor实现文章发布浏览功能/</a>
+    <a href="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/" title="Spring Boot与Ueditor实现文章发布浏览功能">https://lenjon.top/2020/05/03/Spring-Boot与Ueditor实现文章发布浏览功能/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-Hans" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -385,10 +385,10 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
               <a href="/tags/Spring-Boot/" rel="tag"><i class="fa fa-tag"></i> Spring Boot</a>
               <a href="/tags/Apache-Freemarker/" rel="tag"><i class="fa fa-tag"></i> Apache Freemarker</a>
               <a href="/tags/MyBatis-Plus/" rel="tag"><i class="fa fa-tag"></i> MyBatis Plus</a>
+              <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
           </div>
 
         
