@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lenjon.top/"/>
-  <updated>2020-07-06T06:13:59.958Z</updated>
+  <updated>2020-07-06T06:17:52.541Z</updated>
   <id>https://lenjon.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lenjon.top/2020/07/06/Django-MySQL/"/>
     <id>https://lenjon.top/2020/07/06/Django-MySQL/</id>
     <published>2020-07-06T00:47:12.000Z</published>
-    <updated>2020-07-06T06:13:59.958Z</updated>
+    <updated>2020-07-06T06:17:52.541Z</updated>
     
     <summary type="html">
     
@@ -98,9 +98,9 @@
       <category term="Java" scheme="https://lenjon.top/categories/Java/"/>
     
     
-      <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
-    
       <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
+    
+      <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
     
       <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
     
@@ -144,9 +144,9 @@
       <category term="Java" scheme="https://lenjon.top/categories/Java/"/>
     
     
-      <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
-    
       <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
+    
+      <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
     
       <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
     
@@ -194,9 +194,9 @@
       <category term="Java" scheme="https://lenjon.top/categories/Java/"/>
     
     
-      <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
-    
       <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
+    
+      <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
     
       <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
     
@@ -272,11 +272,11 @@
       <category term="Java" scheme="https://lenjon.top/categories/Java/"/>
     
     
+      <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
+    
       <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
     
       <category term="Mybatis" scheme="https://lenjon.top/tags/Mybatis/"/>
-    
-      <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
     
       <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
     
@@ -364,11 +364,11 @@
       <category term="Java" scheme="https://lenjon.top/categories/Java/"/>
     
     
+      <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
+    
       <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
     
       <category term="Mybatis" scheme="https://lenjon.top/tags/Mybatis/"/>
-    
-      <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
     
   </entry>
   
