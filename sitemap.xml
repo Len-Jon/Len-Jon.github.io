@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lenjon.top/2020/04/15/Spring-Boot%E6%95%B4%E5%90%88Web%E5%B1%82%E6%8A%80%E6%9C%AF/</loc>
+    
+    <lastmod>2020-07-06T06:16:05.692Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lenjon.top/2020/07/06/Django-MySQL/</loc>
     
     <lastmod>2020-07-06T06:13:59.958Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://lenjon.top/2020/07/05/Django-params/</loc>
     
     <lastmod>2020-07-06T05:18:14.707Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lenjon.top/2020/04/15/Spring-Boot%E6%95%B4%E5%90%88Web%E5%B1%82%E6%8A%80%E6%9C%AF/</loc>
-    
-    <lastmod>2020-07-06T00:50:27.426Z</lastmod>
     
   </url>
   
