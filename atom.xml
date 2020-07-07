@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lenjon.top/"/>
-  <updated>2020-07-06T06:17:52.541Z</updated>
+  <updated>2020-07-07T10:56:56.451Z</updated>
   <id>https://lenjon.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django-模板学习（持续更新）</title>
+    <link href="https://lenjon.top/2020/07/07/Django-Templates/"/>
+    <id>https://lenjon.top/2020/07/07/Django-Templates/</id>
+    <published>2020-07-07T07:25:06.000Z</published>
+    <updated>2020-07-07T10:56:56.451Z</updated>
+    
+    <summary type="html">
+    
+      Python后端学习 Day4
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://lenjon.top/categories/Python/"/>
+    
+    
+      <category term="Django" scheme="https://lenjon.top/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>Django与MySQL整合</title>
@@ -33,9 +54,9 @@
       <category term="Python" scheme="https://lenjon.top/categories/Python/"/>
     
     
-      <category term="Django" scheme="https://lenjon.top/tags/Django/"/>
-    
       <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
+    
+      <category term="Django" scheme="https://lenjon.top/tags/Django/"/>
     
   </entry>
   
@@ -110,10 +131,10 @@
   
   <entry>
     <title>南邮离散数学实验</title>
-    <link href="https://lenjon.top/2020/05/15/%E5%8D%97%E9%82%AE%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AE%9E%E9%AA%8C/"/>
-    <id>https://lenjon.top/2020/05/15/%E5%8D%97%E9%82%AE%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%AE%9E%E9%AA%8C/</id>
+    <link href="https://lenjon.top/2020/05/15/Discrete-mathematics-experiment/"/>
+    <id>https://lenjon.top/2020/05/15/Discrete-mathematics-experiment/</id>
     <published>2020-05-15T12:45:04.000Z</published>
-    <updated>2020-07-04T14:37:54.542Z</updated>
+    <updated>2020-07-07T07:29:30.534Z</updated>
     
     <summary type="html">
     
@@ -129,10 +150,10 @@
   
   <entry>
     <title>Spring Boot与Ueditor实现文章发布浏览功能</title>
-    <link href="https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/"/>
-    <id>https://lenjon.top/2020/05/03/Spring-Boot%E4%B8%8EUeditor%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%B5%8F%E8%A7%88%E5%8A%9F%E8%83%BD/</id>
+    <link href="https://lenjon.top/2020/05/03/SpringBoot-Ueditor/"/>
+    <id>https://lenjon.top/2020/05/03/SpringBoot-Ueditor/</id>
     <published>2020-05-03T04:22:06.000Z</published>
-    <updated>2020-07-04T15:36:44.847Z</updated>
+    <updated>2020-07-07T07:33:00.707Z</updated>
     
     <summary type="html">
     
@@ -156,10 +177,10 @@
   
   <entry>
     <title> Spring Boot整合Web层技术</title>
-    <link href="https://lenjon.top/2020/04/15/Spring-Boot%E6%95%B4%E5%90%88Web%E5%B1%82%E6%8A%80%E6%9C%AF/"/>
-    <id>https://lenjon.top/2020/04/15/Spring-Boot%E6%95%B4%E5%90%88Web%E5%B1%82%E6%8A%80%E6%9C%AF/</id>
+    <link href="https://lenjon.top/2020/04/15/SpringBoot-Web/"/>
+    <id>https://lenjon.top/2020/04/15/SpringBoot-Web/</id>
     <published>2020-04-15T12:16:28.000Z</published>
-    <updated>2020-07-06T06:16:05.692Z</updated>
+    <updated>2020-07-07T07:39:47.125Z</updated>
     
     <summary type="html">
     
@@ -177,8 +198,8 @@
   
   <entry>
     <title>基于Spring Boot的酒店管理系统</title>
-    <link href="https://lenjon.top/2020/04/11/%E5%9F%BA%E4%BA%8EhAdmin%E7%9A%84%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://lenjon.top/2020/04/11/%E5%9F%BA%E4%BA%8EhAdmin%E7%9A%84%E9%85%92%E5%BA%97%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</id>
+    <link href="https://lenjon.top/2020/04/11/SpringBoot-Project-HotelManager/"/>
+    <id>https://lenjon.top/2020/04/11/SpringBoot-Project-HotelManager/</id>
     <published>2020-04-11T12:30:26.000Z</published>
     <updated>2020-07-05T13:05:38.212Z</updated>
     
@@ -200,16 +221,16 @@
     
       <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
     
-      <category term="MyBatis Plus" scheme="https://lenjon.top/tags/MyBatis-Plus/"/>
-    
       <category term="hAdmin" scheme="https://lenjon.top/tags/hAdmin/"/>
+    
+      <category term="MyBatis Plus" scheme="https://lenjon.top/tags/MyBatis-Plus/"/>
     
   </entry>
   
   <entry>
     <title>利用Springboot和Freemarker简单模拟登录系统</title>
-    <link href="https://lenjon.top/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://lenjon.top/2020/04/07/%E5%88%A9%E7%94%A8Springboot%E5%92%8CFreemaker%E7%AE%80%E5%8D%95%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95%E7%B3%BB%E7%BB%9F/</id>
+    <link href="https://lenjon.top/2020/04/07/Springboot-Freemarker-LoginSystem/"/>
+    <id>https://lenjon.top/2020/04/07/Springboot-Freemarker-LoginSystem/</id>
     <published>2020-04-07T01:53:30.000Z</published>
     <updated>2020-07-05T12:30:33.984Z</updated>
     
@@ -231,10 +252,10 @@
   
   <entry>
     <title>利用Apache爬取微博首页的推荐</title>
-    <link href="https://lenjon.top/2020/04/04/%E5%88%A9%E7%94%A8Apache%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE/"/>
-    <id>https://lenjon.top/2020/04/04/%E5%88%A9%E7%94%A8Apache%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE/</id>
+    <link href="https://lenjon.top/2020/04/04/Apache-Crawler/"/>
+    <id>https://lenjon.top/2020/04/04/Apache-Crawler/</id>
     <published>2020-04-04T14:21:33.000Z</published>
-    <updated>2020-05-07T04:47:15.776Z</updated>
+    <updated>2020-07-07T07:41:13.922Z</updated>
     
     <summary type="html">
     
@@ -257,8 +278,8 @@
   
   <entry>
     <title>为数据库操作添加前端页面</title>
-    <link href="https://lenjon.top/2020/04/02/%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/"/>
-    <id>https://lenjon.top/2020/04/02/%E4%B8%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C%E6%B7%BB%E5%8A%A0%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2/</id>
+    <link href="https://lenjon.top/2020/04/02/html-css-for-CRUD/"/>
+    <id>https://lenjon.top/2020/04/02/html-css-for-CRUD/</id>
     <published>2020-04-02T12:44:32.000Z</published>
     <updated>2020-07-05T13:05:52.328Z</updated>
     
@@ -276,16 +297,16 @@
     
       <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
     
-      <category term="Mybatis" scheme="https://lenjon.top/tags/Mybatis/"/>
-    
       <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
+    
+      <category term="Mybatis" scheme="https://lenjon.top/tags/Mybatis/"/>
     
   </entry>
   
   <entry>
     <title>服务器配置Java环境并安装MySQL</title>
-    <link href="https://lenjon.top/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/"/>
-    <id>https://lenjon.top/2020/03/31/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AEJava%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85MySQL/</id>
+    <link href="https://lenjon.top/2020/03/31/CentOS-Java-MySQL/"/>
+    <id>https://lenjon.top/2020/03/31/CentOS-Java-MySQL/</id>
     <published>2020-03-31T04:42:52.000Z</published>
     <updated>2020-05-07T04:47:15.793Z</updated>
     
@@ -305,8 +326,8 @@
   
   <entry>
     <title>Spring Boot + Freemarker 整合</title>
-    <link href="https://lenjon.top/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/"/>
-    <id>https://lenjon.top/2020/03/30/Spring-Boot-Freemarker-%E6%95%B4%E5%90%88/</id>
+    <link href="https://lenjon.top/2020/03/30/SpringBoot-Freemarker/"/>
+    <id>https://lenjon.top/2020/03/30/SpringBoot-Freemarker/</id>
     <published>2020-03-30T15:56:34.000Z</published>
     <updated>2020-07-04T14:38:51.278Z</updated>
     
@@ -328,8 +349,8 @@
   
   <entry>
     <title>SQL学习笔记</title>
-    <link href="https://lenjon.top/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://lenjon.top/2020/03/30/SQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://lenjon.top/2020/03/30/SQL-note/"/>
+    <id>https://lenjon.top/2020/03/30/SQL-note/</id>
     <published>2020-03-30T04:24:16.000Z</published>
     <updated>2020-05-07T04:47:15.743Z</updated>
     
@@ -349,8 +370,8 @@
   
   <entry>
     <title>IDEA+Spring Boot+Mybatis+MySQL整合</title>
-    <link href="https://lenjon.top/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/"/>
-    <id>https://lenjon.top/2020/03/30/IDEA-Spring-Boot-Mybatis-MySQL%E6%95%B4%E5%90%88/</id>
+    <link href="https://lenjon.top/2020/03/30/SpringBoot-Mybatis-MySQL/"/>
+    <id>https://lenjon.top/2020/03/30/SpringBoot-Mybatis-MySQL/</id>
     <published>2020-03-30T02:45:02.000Z</published>
     <updated>2020-07-04T14:38:37.344Z</updated>
     
@@ -374,8 +395,8 @@
   
   <entry>
     <title>Spring Boot运行Hello, world!</title>
-    <link href="https://lenjon.top/2020/03/20/Spring-Boot%E8%BF%90%E8%A1%8CHello-world/"/>
-    <id>https://lenjon.top/2020/03/20/Spring-Boot%E8%BF%90%E8%A1%8CHello-world/</id>
+    <link href="https://lenjon.top/2020/03/20/SpringBoot-Hello-world/"/>
+    <id>https://lenjon.top/2020/03/20/SpringBoot-Hello-world/</id>
     <published>2020-03-20T07:46:29.000Z</published>
     <updated>2020-07-04T14:39:35.876Z</updated>
     
