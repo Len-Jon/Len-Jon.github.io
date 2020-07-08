@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lenjon.top/2020/07/08/Django-AdminServe/</loc>
+    
+    <lastmod>2020-07-08T04:33:26.410Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lenjon.top/2020/07/07/Django-Templates/</loc>
     
     <lastmod>2020-07-07T10:56:56.451Z</lastmod>

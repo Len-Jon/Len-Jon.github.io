@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lenjon.top/"/>
-  <updated>2020-07-07T10:56:56.451Z</updated>
+  <updated>2020-07-08T04:33:26.410Z</updated>
   <id>https://lenjon.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django使用后台管理系统</title>
+    <link href="https://lenjon.top/2020/07/08/Django-AdminServe/"/>
+    <id>https://lenjon.top/2020/07/08/Django-AdminServe/</id>
+    <published>2020-07-08T04:25:01.000Z</published>
+    <updated>2020-07-08T04:33:26.410Z</updated>
+    
+    <summary type="html">
+    
+      Python后端学习 Day5
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://lenjon.top/categories/Python/"/>
+    
+    
+      <category term="Django" scheme="https://lenjon.top/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>Django-模板学习（持续更新）</title>
@@ -54,9 +75,9 @@
       <category term="Python" scheme="https://lenjon.top/categories/Python/"/>
     
     
-      <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
-    
       <category term="Django" scheme="https://lenjon.top/tags/Django/"/>
+    
+      <category term="MySQL" scheme="https://lenjon.top/tags/MySQL/"/>
     
   </entry>
   
@@ -221,9 +242,9 @@
     
       <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
     
-      <category term="hAdmin" scheme="https://lenjon.top/tags/hAdmin/"/>
-    
       <category term="MyBatis Plus" scheme="https://lenjon.top/tags/MyBatis-Plus/"/>
+    
+      <category term="hAdmin" scheme="https://lenjon.top/tags/hAdmin/"/>
     
   </entry>
   
