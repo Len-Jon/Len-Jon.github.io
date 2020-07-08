@@ -96,8 +96,8 @@ cp(no)->lo</textarea><textarea id="flowchart-0-options" style="display: none">{"
         <tag>MySQL</tag>
         <tag>Spring Boot</tag>
         <tag>Apache Freemarker</tag>
-        <tag>MyBatis Plus</tag>
         <tag>hAdmin</tag>
+        <tag>MyBatis Plus</tag>
       </tags>
   </entry>
   <entry>
@@ -367,8 +367,8 @@ cp(no)->lo</textarea><textarea id="flowchart-0-options" style="display: none">{"
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Django</tag>
         <tag>MySQL</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
