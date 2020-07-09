@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lenjon.top/"/>
-  <updated>2020-07-08T04:53:46.282Z</updated>
+  <updated>2020-07-09T06:57:39.016Z</updated>
   <id>https://lenjon.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django搭建博客</title>
+    <link href="https://lenjon.top/2020/07/09/Django-Blog/"/>
+    <id>https://lenjon.top/2020/07/09/Django-Blog/</id>
+    <published>2020-07-09T06:18:28.000Z</published>
+    <updated>2020-07-09T06:57:39.016Z</updated>
+    
+    <summary type="html">
+    
+      Django实战（一）
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://lenjon.top/categories/Python/"/>
+    
+    
+      <category term="Django" scheme="https://lenjon.top/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>Django使用后台管理系统</title>
@@ -242,9 +263,9 @@
     
       <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
     
-      <category term="MyBatis Plus" scheme="https://lenjon.top/tags/MyBatis-Plus/"/>
-    
       <category term="hAdmin" scheme="https://lenjon.top/tags/hAdmin/"/>
+    
+      <category term="MyBatis Plus" scheme="https://lenjon.top/tags/MyBatis-Plus/"/>
     
   </entry>
   
