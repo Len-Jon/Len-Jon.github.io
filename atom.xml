@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lenjon.top/"/>
-  <updated>2020-07-09T06:57:39.016Z</updated>
+  <updated>2020-07-10T06:06:07.105Z</updated>
   <id>https://lenjon.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://lenjon.top/2020/07/09/Django-Blog/"/>
     <id>https://lenjon.top/2020/07/09/Django-Blog/</id>
     <published>2020-07-09T06:18:28.000Z</published>
-    <updated>2020-07-09T06:57:39.016Z</updated>
+    <updated>2020-07-10T06:06:07.105Z</updated>
     
     <summary type="html">
     
@@ -339,9 +339,9 @@
     
       <category term="Spring Boot" scheme="https://lenjon.top/tags/Spring-Boot/"/>
     
-      <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
-    
       <category term="Mybatis" scheme="https://lenjon.top/tags/Mybatis/"/>
+    
+      <category term="Apache Freemarker" scheme="https://lenjon.top/tags/Apache-Freemarker/"/>
     
   </entry>
   
