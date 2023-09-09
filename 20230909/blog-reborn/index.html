@@ -22,26 +22,26 @@
     <meta name="description" content="经过数次的重装系统环境迁移，博客弄得乱七八糟，痛定思痛，破釜沉舟，记录重新搭建一个Hexo Next博客的流程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客+部署到Github或ECS">
-<meta property="og:url" content="https://lenjon.top/2023/09/09/blog-reborn/index.html">
+<meta property="og:url" content="https://lenjon.top/20230909/blog-reborn/index.html">
 <meta property="og:site_name" content="头发收集屋">
 <meta property="og:description" content="经过数次的重装系统环境迁移，博客弄得乱七八糟，痛定思痛，破釜沉舟，记录重新搭建一个Hexo Next博客的流程。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lenjon.top/2023/09/09/blog-reborn/1.png">
-<meta property="og:image" content="https://lenjon.top/2023/09/09/blog-reborn/image-20230909234412854.png">
-<meta property="og:image" content="https://lenjon.top/2023/09/09/blog-reborn/image-20230909235133755.png">
+<meta property="og:image" content="https://lenjon.top/20230909/blog-reborn/1.png">
+<meta property="og:image" content="https://lenjon.top/20230909/blog-reborn/image-20230909234412854.png">
+<meta property="og:image" content="https://lenjon.top/20230909/blog-reborn/image-20230909235133755.png">
 <meta property="article:published_time" content="2023-09-08T16:31:52.000Z">
-<meta property="article:modified_time" content="2023-09-09T15:51:48.387Z">
+<meta property="article:modified_time" content="2023-09-09T16:08:56.251Z">
 <meta property="article:author" content="Len">
 <meta property="article:tag" content="Blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lenjon.top/2023/09/09/blog-reborn/1.png">
+<meta name="twitter:image" content="https://lenjon.top/20230909/blog-reborn/1.png">
 
 
-<link rel="canonical" href="https://lenjon.top/2023/09/09/blog-reborn/">
+<link rel="canonical" href="https://lenjon.top/20230909/blog-reborn/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lenjon.top/2023/09/09/blog-reborn/","path":"2023/09/09/blog-reborn/","title":"Hexo博客+部署到Github或ECS"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lenjon.top/20230909/blog-reborn/","path":"20230909/blog-reborn/","title":"Hexo博客+部署到Github或ECS"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Hexo博客+部署到Github或ECS | 头发收集屋</title>
@@ -226,7 +226,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lenjon.top/2023/09/09/blog-reborn/">
+    <link itemprop="mainEntityOfPage" href="https://lenjon.top/20230909/blog-reborn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -254,9 +254,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-09-09 00:31:52 / 修改时间：23:51:48" itemprop="dateCreated datePublished" datetime="2023-09-09T00:31:52+08:00">2023-09-09</time>
+      <time title="创建时间：2023-09-09 00:31:52" itemprop="dateCreated datePublished" datetime="2023-09-09T00:31:52+08:00">2023-09-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-10 00:08:56" itemprop="dateModified" datetime="2023-09-10T00:08:56+08:00">2023-09-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -352,7 +358,7 @@
 
 <p>save是写入package.json，从远程仓库备份拉下来的时候npm install的时候会带上它。</p>
 <p>然后Typora这样配置：</p>
-<p><img src="/2023/09/09/blog-reborn/../blog-reborn/1.png" alt="image-1"></p>
+<p><img src="/20230909/blog-reborn/../blog-reborn/1.png" alt="image-1"></p>
 <p>图片就像Markdown的语法，正常引用就行：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">image-1</span>](<span class="link">blog-reborn/1.png</span>)</span><br></pre></td></tr></table></figure>
 
@@ -412,15 +418,21 @@
 <li><p>配置个人域名（可选）</p>
 <p>通过<code>ping username.github.io</code>获取IP，现在（2023-09-09）Github似乎分配的是IPv6地址。</p>
 <p>然后配置域名解析：</p>
-<p><img src="/2023/09/09/blog-reborn/../blog-reborn/image-20230909234412854.png" alt="image-20230909234412854"></p>
+<p><img src="/20230909/blog-reborn/../blog-reborn/image-20230909234412854.png" alt="image-20230909234412854"></p>
 <p>然后回到仓库的设置，可以把下边的HTTPS顺带勾选上。</p>
-<p><img src="/2023/09/09/blog-reborn/../blog-reborn/image-20230909235133755.png" alt="image-20230909235133755"></p>
+<p><img src="/20230909/blog-reborn/../blog-reborn/image-20230909235133755.png" alt="image-20230909235133755"></p>
 <p>在博客的source文件夹下新建CNAME文件，内容为自己的域名。</p>
 </li>
 </ol>
 <h2 id="部署到ESC"><a href="#部署到ESC" class="headerlink" title="部署到ESC"></a>部署到ESC</h2><p>参考本站的另一篇文章：</p>
-<p><a href="/2023/09/09/blog-reborn/..//2020/10/07/hexo_to_ecs/">Hexo博客部署到ESC + HTTPS配置</a></p>
-<h1 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h1>
+<p><a href="/20230909/blog-reborn/..//2020/10/07/hexo_to_ecs/">Hexo博客部署到ESC + HTTPS配置</a></p>
+<h1 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h1><p>安装插件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
+
+<p>添加配置项</p>
+<figure class="highlight yaml"><figcaption><span>blog/_config.yaml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line"><span class="attr">baidusitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
@@ -437,7 +449,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://lenjon.top/2023/09/09/blog-reborn/" title="Hexo博客+部署到Github或ECS">https://lenjon.top/2023/09/09/blog-reborn/</a>
+      <a href="https://lenjon.top/20230909/blog-reborn/" title="Hexo博客+部署到Github或ECS">https://lenjon.top/20230909/blog-reborn/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -453,7 +465,7 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/10/07/hexo_to_ecs/" rel="prev" title="Hexo博客部署到ESC + HTTPS配置">
+                <a href="/20201007/hexo_to_ecs/" rel="prev" title="Hexo博客部署到ESC + HTTPS配置">
                   <i class="fa fa-angle-left"></i> Hexo博客部署到ESC + HTTPS配置
                 </a>
             </div>
