@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://lenjon.top/20210913/tomcat-bug-auto-killed/</loc>
+    <lastmod>2023-09-09</lastmod>
+  </url>
+  <url>
+    <loc>https://lenjon.top/20200515/Discrete-mathematics-experiment/</loc>
+    <lastmod>2023-09-09</lastmod>
+  </url>
+  <url>
     <loc>https://lenjon.top/20230909/blog-reborn/</loc>
     <lastmod>2023-09-09</lastmod>
   </url>
   <url>
     <loc>https://lenjon.top/20201007/hexo_to_ecs/</loc>
+    <lastmod>2023-09-09</lastmod>
+  </url>
+  <url>
+    <loc>https://lenjon.top/20210302/self-signed-https/</loc>
     <lastmod>2023-09-09</lastmod>
   </url>
 </urlset> 
