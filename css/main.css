@@ -1455,6 +1455,11 @@ pre code {
   display: inline-block;
   margin: 0 5px;
 }
+.beian img {
+  display: inline-block;
+  margin: 0 3px;
+  vertical-align: middle;
+}
 @keyframes icon-animate {
   0%, 100% {
     transform: scale(1);
@@ -2484,7 +2489,7 @@ body {
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
 }
 .beian {
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.8);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -2492,11 +2497,11 @@ body {
   color: #ff8c00;
 }
 .copyright {
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.8);
   color: #0fd;
 }
 .powered-by {
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.8);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
