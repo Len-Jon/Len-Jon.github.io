@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lenjon.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="原来从北大猫协小程序fork出来的南邮猫录小程序因成本原因被迫中止，因此，计划使用免费的Gitee Pages作为前端页面。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="南邮猫协小程序0成本解决方案">
+<meta property="og:url" content="https://lenjon.top/20230910/hexo-njupt-cat/index.html">
+<meta property="og:site_name" content="头发收集屋">
+<meta property="og:description" content="原来从北大猫协小程序fork出来的南邮猫录小程序因成本原因被迫中止，因此，计划使用免费的Gitee Pages作为前端页面。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910204537502.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910205455744.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910211406113.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910211543405.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910213645948.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910214355262.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910214426285.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910214801045.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910222206633.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910222251815.png">
+<meta property="og:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910220935319.png">
+<meta property="article:published_time" content="2023-09-10T12:09:49.000Z">
+<meta property="article:modified_time" content="2023-09-10T14:44:47.103Z">
+<meta property="article:author" content="Len">
+<meta property="article:tag" content="Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lenjon.top/20230910/hexo-njupt-cat/image-20230910204537502.png">
+
+
+<link rel="canonical" href="https://lenjon.top/20230910/hexo-njupt-cat/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lenjon.top/20230910/hexo-njupt-cat/","path":"20230910/hexo-njupt-cat/","title":"南邮猫协小程序0成本解决方案"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>南邮猫协小程序0成本解决方案 | 头发收集屋</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">头发收集屋</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">每一根掉落的头发都是有原因的</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E6%B8%85%E5%8D%95"><span class="nav-number">1.1.</span> <span class="nav-text">环境清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">1.2.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.1.</span> <span class="nav-text">下载与安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git%E5%85%A8%E5%B1%80%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.2.</span> <span class="nav-text">Git全局信息配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AESSH%E5%AF%86%E9%92%A5"><span class="nav-number">1.3.</span> <span class="nav-text">配置SSH密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitee-Github%E8%B4%A6%E5%8F%B7%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">Gitee&#x2F;Github账号设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js-Hexo"><span class="nav-number">1.5.</span> <span class="nav-text">Node.js &amp; Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js"><span class="nav-number">1.5.1.</span> <span class="nav-text">Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo"><span class="nav-number">1.5.2.</span> <span class="nav-text">Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">1.6.</span> <span class="nav-text">Markdown编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%87%86%E5%A4%87"><span class="nav-number">1.6.1.</span> <span class="nav-text">软件准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.6.2.</span> <span class="nav-text">基础知识</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="nav-number">2.</span> <span class="nav-text">搭建博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E8%B4%9F%E8%B4%A3%E6%90%AD%E5%BB%BA"><span class="nav-number">2.1.</span> <span class="nav-text">我负责搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%BB%A5%E5%8F%8A%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="nav-number">2.1.1.</span> <span class="nav-text">创建文件夹以及第一个版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.2.</span> <span class="nav-text">关键操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">2.1.3.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E9%80%89%E6%8B%A9%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.4.</span> <span class="nav-text">主题选择与配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%91%E8%B4%9F%E8%B4%A3%E8%BF%90%E7%BB%B4"><span class="nav-number">2.2.</span> <span class="nav-text">我负责运维</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Len"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Len</p>
+  <div class="site-description" itemprop="description">这个是懒狗，什么都没有留下</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/Len-Jon" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Len-Jon" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wwqkbb@qq.com" title="E-Mail → mailto:wwqkbb@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="tencent://message/?uin=641926164&Site=&Menu=yes" title="QQ → tencent:&#x2F;&#x2F;message&#x2F;?uin&#x3D;641926164&amp;Site&#x3D;&amp;Menu&#x3D;yes" rel="noopener me" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="http://hanablog.cr.cx/" title="http:&#x2F;&#x2F;hanablog.cr.cx&#x2F;" rel="noopener" target="_blank">花枝丸</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="http://leukpoint.top/" title="http:&#x2F;&#x2F;leukpoint.top&#x2F;" rel="noopener" target="_blank">LeukPoint</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yjhmit.github.io/" title="https:&#x2F;&#x2F;yjhmit.github.io&#x2F;" rel="noopener" target="_blank">FluoxeTine</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://ydjsir.com.cn/" title="https:&#x2F;&#x2F;ydjsir.com.cn&#x2F;" rel="noopener" target="_blank">YDJSIR</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://hushine6.github.io/" title="https:&#x2F;&#x2F;hushine6.github.io&#x2F;" rel="noopener" target="_blank">Hushine</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://ciraosindex.top/" title="https:&#x2F;&#x2F;ciraosindex.top&#x2F;" rel="noopener" target="_blank">Ciraos</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://thebadzhang.top/" title="https:&#x2F;&#x2F;thebadzhang.top" rel="noopener" target="_blank">无糖可乐</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://sun482.github.io/" title="https:&#x2F;&#x2F;sun482.github.io&#x2F;" rel="noopener" target="_blank">sun482</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://yiling.xyz/" title="https:&#x2F;&#x2F;yiling.xyz&#x2F;" rel="noopener" target="_blank">一零</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://whz11.github.io/" title="https:&#x2F;&#x2F;whz11.github.io&#x2F;" rel="noopener" target="_blank">whz11</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://lakphy.me/" title="https:&#x2F;&#x2F;lakphy.me&#x2F;" rel="noopener" target="_blank">lakphy</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lenjon.top/20230910/hexo-njupt-cat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Len">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="头发收集屋">
+      <meta itemprop="description" content="这个是懒狗，什么都没有留下">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="南邮猫协小程序0成本解决方案 | 头发收集屋">
+      <meta itemprop="description" content="原来从北大猫协小程序fork出来的南邮猫录小程序因成本原因被迫中止，因此，计划使用免费的Gitee Pages作为前端页面。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          南邮猫协小程序0成本解决方案
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-09-10 20:09:49 / 修改时间：22:44:47" itemprop="dateCreated datePublished" datetime="2023-09-10T20:09:49+08:00">2023-09-10</time>
+    </span>
+
+  
+</div>
+
+            <div class="post-description">原来从北大猫协小程序fork出来的南邮猫录小程序因成本原因被迫中止，因此，计划使用免费的Gitee Pages作为前端页面。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="环境清单"><a href="#环境清单" class="headerlink" title="环境清单"></a>环境清单</h2><p>因为这是面向0基础的教程，若有一定的计算机基础，可对照此清单根据自己的情况跳过。实在不行，看左边侧边栏加我QQ，工作繁忙，有时间我会回的。</p>
+<p>本文以市场占有率最高Windows系统为例，mac OS用户可以根据步骤寻找自己对应的教程。</p>
+<blockquote>
+<p>至于Linux？你都用Linux了我想这些问题对你来说不是问题。</p>
+</blockquote>
+<ul>
+<li><input disabled="" type="checkbox"> Git</li>
+<li><input disabled="" type="checkbox"> 配置SSH密钥</li>
+<li><input disabled="" type="checkbox"> 一个实名制Gitee账号（每个账号只能搭建一个站点，因此建议参考本解决方案的社团准备一个公共的Gitee账号，并且需要实名）<strong>或</strong>Github账号（好处是不用实名，坏处是国内可能会因为DNS污染无法访问）</li>
+<li><input disabled="" type="checkbox"> Node.js与Hexo</li>
+<li><input disabled="" type="checkbox"> Markdown编辑器</li>
+</ul>
+<p>本文所提到的软件部分已上传到<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/17DetQqt8jr5VCp9Xg7wrjg?pwd=0317">百度网盘</a>。如果你只负责<strong>运维而不负责搭建</strong>，有一个取巧的办法，只需要下载一个Markdown编辑器，浏览本文Markdown编辑器相关部分，然后参考本文 搭建博客-我负责运维 的方案A。</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h3><p>Git是一个版本管理工具，考虑到社团多人开发的需求，建议需要维护网站的都需要走一遍这个流程。首先先下载<a target="_blank" rel="noopener" href="https://git-scm.com/download">Git - Downloads (git-scm.com)</a>，现在大家的电脑都是64位的吧？那么就选择这个傻瓜安装包，别选Windows Porable。</p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910204537502.png" alt="image-20230910204537502"></p>
+<p>因为此链接为Github上的链接，所以也有可能下载失败，建议在我框起来的地方右键选择复制链接，然后用迅雷下载。还有最后一种方式：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/17DetQqt8jr5VCp9Xg7wrjg?pwd=0317">百度网盘</a>（Git-2.42.0.2-64-bit.exe）</p>
+<p>下载好了之后一路默认选项安装就可以了。安装完成后有个检查方式就是鼠标右键，会发现有个Open Git Bash Here。这个很重要，后面大多数操作都需要它完成。</p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910205455744.png" alt="image-20230910205455744"></p>
+<h3 id="Git全局信息配置"><a href="#Git全局信息配置" class="headerlink" title="Git全局信息配置"></a>Git全局信息配置</h3><div class="note default"><p>在使用命令行时，建议检查输入法是否为英文输入状态！</p>
+</div>
+
+<p>参考上图的方式，打开Git Bash，输入下面两行命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;username&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>将username换成自己的名字和邮箱地址，如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;wwqkbb&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;wwqkbb@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置SSH密钥"><a href="#配置SSH密钥" class="headerlink" title="配置SSH密钥"></a>配置SSH密钥</h2><p>打开Git Bash，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>记得邮箱要填自己的。然后一路按回车即可，然后拷贝以下公钥，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>需要用到时可以去个人文件夹下的.ssh文件夹（通常是隐藏文件夹）下找到id_rsa.pub文件，这个叫做<strong>公钥</strong>，没有后缀的叫做<strong>私钥</strong>，公钥大概长这样：</p>
+<blockquote>
+<p>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDny+NhRGglBciKTxePRNgz4YzZ85klDZFdTehEM1CG0LxRoYXtyES+6QmV0uChOmP1zqKCs1KTN1i9Qg2SFAuSDbWVnmDHJa1kSwvVtpWn8c+is2QZwxvTcgAykl7rzeaZzPplr4i&#x2F;K1rUwfsBTWLW3rwJMmL5Zqjepe9F9a&#x2F;PJLCR02SmgAMryIORnuSMk0rB0lCjItWm6xDOwT+H+7O4DHmlSk6Xg1+06f40VF26Wl3TCTsSZzwpCGCvj6I8K3DZa8pAt013R2qcaTuadtva+xQIZuYP5RJODirvv3otYDzC9tumfgV+gNaO5mh+3wNT3fT5JTwCniI6&#x2F;7lbVySOBKPuHCi6c85IR1XtCA94xnfqh1nYdgYmDpLmxM8Ko16&#x2F;UfaveNU8ifDd&#x2F;csEt7VxXexxHvKtHnihsAmFKyOi+zmr9xLWQ4Wi4gsBX1pIVdUOetqq4gWJO1HuIST16CUkPc4Dkvo7iZEayNtjLMcNNrORhCGTrAIDtKqpiyJm3ns&#x3D; <a href="mailto:&#x77;&#x77;&#113;&#x6b;&#98;&#98;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#x6d;">&#x77;&#x77;&#113;&#x6b;&#98;&#98;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#x6d;</a></p>
+</blockquote>
+<p>如果嫌找这个文件麻烦，就把这一串复制下来。</p>
+<h2 id="Gitee-Github账号设置"><a href="#Gitee-Github账号设置" class="headerlink" title="Gitee&#x2F;Github账号设置"></a>Gitee&#x2F;Github账号设置</h2><p>这里以Gitee账号为例，进入设置-SSH公钥，这里标题随便填，可以填自己邮箱，然后把上面过程中生成的公钥放到里面，点击确定：<img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910211406113.png" alt="image-20230910211406113"></p>
+<h2 id="Node-js-Hexo"><a href="#Node-js-Hexo" class="headerlink" title="Node.js &amp; Hexo"></a>Node.js &amp; Hexo</h2><h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><p>打开<a target="_blank" rel="noopener" href="https://nodejs.org/en">Node.js (nodejs.org)</a>官网下载，似乎会自动识别设备型号：</p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910211543405.png" alt="image-20230910211543405"></p>
+<p>下载慢？来吧：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/17DetQqt8jr5VCp9Xg7wrjg?pwd=0317">百度网盘</a>（node-v18.17.1-x64.msi)</p>
+<p>下载好后一路默认安装即可，然后新开一个Git Bash，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>v16.13.1</p>
+</blockquote>
+<p>这里是我当前使用的版本号，只要不是下面这个情况就行：</p>
+<blockquote>
+<p>bash: node: command not found</p>
+</blockquote>
+<p>若是出现这个，重新启动再来一次。</p>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>比较特殊，需要通过命令行安装，打开Git Bash，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后新开一个Git Bash，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>hexo-cli: 4.3.0<br>os: win32 10.0.19045<br>node: 16.13.1<br>…</p>
+</blockquote>
+<p>出现很长一串的版本信息说明安装成功。</p>
+<h2 id="Markdown编辑器"><a href="#Markdown编辑器" class="headerlink" title="Markdown编辑器"></a>Markdown编辑器</h2><h3 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h3><p>一个是零成本的方案，使用<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a>，搭配<code>Markdown Preview Enhanced</code>插件使用效果如图所示：</p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910213645948.png" alt="image-20230910213645948"></p>
+<p>如果使用此软件，不推荐下载User Installer版本，点开这个：</p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910214355262.png" alt="image-20230910214355262"></p>
+<p>选择此版本下载：</p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910214426285.png" alt="image-20230910214426285"></p>
+<p>下载慢？老规矩：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/17DetQqt8jr5VCp9Xg7wrjg?pwd=0317">百度网盘</a>（VSCodeSetup-x64-1.82.0.exe）</p>
+<p>另一个方案是使用<a target="_blank" rel="noopener" href="https://typoraio.cn/">Typora</a>，但是要收费（但是懂得都懂）。效果大概是这样的：</p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910214801045.png" alt="image-20230910214801045"></p>
+<h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><p>因为编写博客使用的是<a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">Markdown 基本语法</a>，所以需要对这个东西有一定的了解，不要被吓到，点开链接，不到半小时就可以掌握常用的标签，考虑到搭建站点的用途，需要掌握标题、引用、图片、列表四个就够用了。</p>
+<p><em>如果实在不想学，也可以不学，跳过这一部分，直接复制我给的样板，修改对应的信息即可。</em></p>
+<h1 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h1><p>路线选择：因为这个博客的搭建一个人来做就够了，其他人考虑到版本同步，只需要进行简单的下拉操作，因此，请选择你的方向：</p>
+<ul>
+<li>我负责搭建</li>
+<li>我负责运维</li>
+</ul>
+<h2 id="我负责搭建"><a href="#我负责搭建" class="headerlink" title="我负责搭建"></a>我负责搭建</h2><p>具体参考我的另一篇文章：<a href="https://lenjon.top/20230909/blog-reborn/#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE">Hexo博客+部署到Github或ECS | 头发收集屋 (lenjon.top)</a>，如果你不是负责搭建的同学，请跳过。</p>
+<h3 id="创建文件夹以及第一个版本"><a href="#创建文件夹以及第一个版本" class="headerlink" title="创建文件夹以及第一个版本"></a>创建文件夹以及第一个版本</h3><p>新创建一个文件夹作为博客的根目录，然后点进文件夹，打开Git Bash，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>INFO  Cloning hexo-starter <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-starter.git">https://github.com/hexojs/hexo-starter.git</a><br>INFO  Install dependencies<br>warning hexo &gt; warehouse &gt; <a href="mailto:&#x63;&#117;&#105;&#x64;&#64;&#x32;&#x2e;&#49;&#46;&#x38;">&#x63;&#117;&#105;&#x64;&#64;&#x32;&#x2e;&#49;&#46;&#x38;</a>: Cuid and other k-sortable and non-cryptographic ids (Ulid, ObjectId, KSUID, all UUIDs) are all insecure. Use @paralleldrive&#x2F;cuid2 instead.<br>INFO  Start blogging with Hexo!</p>
+</blockquote>
+<p>初次使用需要安装依赖文件，输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>然后创建一个Git仓库并添加第一个版本（那个小数点代表所有改动的文件，不是笔误，别漏了）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;init&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>后面两个命令的格式请记住，之后非常常用，每做出一次重大改动就提交一次版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;这里是注释信息，可以自己写点，比如说：更新了钢琴的信息&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后在Gitee&#x2F;Github创建一个<strong>公有仓库</strong></p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910222206633.png" alt="image-20230910222206633"></p>
+<p>然后执行后面两句：</p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910222251815.png" alt="image-20230910222251815"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@gitee.com:Len-Jon/hexo-njupt-cat.git</span><br><span class="line">git push -u origin <span class="string">&quot;master&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>以后当需要提交版本的时候：</p>
+<p>请使用下面三件套：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;本次注释信息&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>想知其然并且知其所以然，需要学一下Git，不学的话就这样将就用吧。</p>
+<h3 id="关键操作"><a href="#关键操作" class="headerlink" title="关键操作"></a>关键操作</h3><p>你需要对以下多个命令有基本了解：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">hexo cl <span class="comment">#清除缓存</span></span><br><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo g <span class="comment">#生成静态页面</span></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">hexo s <span class="comment">#本地服务启动</span></span><br><span class="line">hexo server</span><br><span class="line"></span><br><span class="line">hexo d <span class="comment">#部署</span></span><br><span class="line">hexo deploy</span><br><span class="line"></span><br><span class="line">hexo n <span class="string">&quot;title&quot;</span> <span class="comment">#新建名为title的文章</span></span><br><span class="line">hexo new <span class="string">&quot;title&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>一组的两个是等效的，为了省事我们通常都用简写。</p>
+<p>输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>INFO  Validating config<br>INFO  Start processing<br>INFO  Hexo is running at <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> . Press Ctrl+C to stop.</p>
+</blockquote>
+<p>然后我们打开浏览器，打开返回的<a target="_blank" rel="noopener" href="http://localhost:4000/">链接</a>，如需停止，输入<kbd>Ctrl</kbd>+<kbd>C</kbd>即可。</p>
+<p>出现如下页面说明搭建成功：</p>
+<p><img src="/20230910/hexo-njupt-cat/../hexo-njupt-cat/image-20230910220935319.png" alt="image-20230910220935319"></p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>注意看，目录里面有一个<code>_config.yaml</code>文件，推荐使用上面下载的VS Code打开，根据里面的信息改成自己的信息即可（相信大学生了都看得懂英文），这个可以慢慢研究。</p>
+<h3 id="主题选择与配置"><a href="#主题选择与配置" class="headerlink" title="主题选择与配置"></a>主题选择与配置</h3><p>我推荐NexT主题，剩下的部分请我的另一篇文章：<a href="https://lenjon.top/20230909/blog-reborn/#%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE">Hexo博客+部署到Github或ECS | 头发收集屋 (lenjon.top)</a></p>
+<h2 id="我负责运维"><a href="#我负责运维" class="headerlink" title="我负责运维"></a>我负责运维</h2><p>方案A：让负责搭建的人给你一个模板，然后用Markdown编辑器根据模板修改信息发回给负责搭建的同学。</p>
+<p>方案B：</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Len
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lenjon.top/20230910/hexo-njupt-cat/" title="南邮猫协小程序0成本解决方案">https://lenjon.top/20230910/hexo-njupt-cat/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Blog/" rel="tag"># Blog</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/20230909/blog-reborn/" rel="prev" title="Hexo博客+部署到Github或ECS">
+                  <i class="fa fa-angle-left"></i> Hexo博客+部署到Github或ECS
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">苏ICP备2023016734号 </a>
+      <img src="/images/ga.png" alt="">
+  </div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Len</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
